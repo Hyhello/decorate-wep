@@ -1,23 +1,13 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/**
+ * 作者：yeshengqiang
+ * 时间：2018-04-03
+ * 描述：app入口
+ */
+<style lang="scss">
+  @import 'normalize.css';
+  @import 'src/scss/common';
+  @import 'src/scss/animate';
 </style>
+<template>
+  <router-view></router-view>
+</template>
