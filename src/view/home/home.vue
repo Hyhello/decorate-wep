@@ -7,11 +7,15 @@
 
 </style>
 <template>
-    <div>
-        <h3>123123</h3>vueTpl</div>
+  <div class="home-panel">
+      <hy-header></hy-header>
+      <hy-footer></hy-footer>
+  </div>
 </template>
 <script>
-    export default {
+  import { hyHeader, hyFooter } from '@/components';
 
-    };
+  export default {
+    components: { hyHeader, hyFooter }
+  };
 </script>
