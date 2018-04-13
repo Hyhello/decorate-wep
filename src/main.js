@@ -3,11 +3,14 @@
 import Vue from 'vue';
 import router from './router';
 import store from './store';
+import svgIcon from './icons';
 
 Vue.config.productionTip = false;
+
+Vue.use(svgIcon);
 
 /* eslint-disable no-new */
 new Vue({
 	router,
-  store
+    store
 }).$mount('#app');

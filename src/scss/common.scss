@@ -4,8 +4,63 @@
  * 描述：样式
  */
 
+@import 'src/scss/vars';
+
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, figure, table, td, img, div, dl, dt, dd, input, p, button, strong, del, pre {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-text-size-adjust: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+ul, ol {
+    list-style: outside none none;
+}
+
+input, select, textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+a:focus {
+    outline: none;
+    -moz-outline: none;
+}
+
+
+/*清浮动*/
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
 body{
-    color:#333;
-    font-size:16px;
+    color: $white;
+    // background-color: $body_bg;
+    font-size: 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+}
+
+.container {
+    position: relative;
+    min-width: 1170px;
+    width: 100%;
+    .container-main {
+        width: 1170px;
+        margin: 0 auto;
+    }
 }
