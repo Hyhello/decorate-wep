@@ -4,7 +4,10 @@
  * 描述：index.js
  */
 
- import hyHeader from './header/header.vue';
+ import hyTips from './tips/tips.vue';
+ import hyNav from './nav/nav.vue';
  import hyFooter from './footer/footer.vue';
+ import hyBanner from './banner/banner.vue';
+ import hyNews from './news/news.vue';
 
- export { hyHeader, hyFooter };
+ export { hyTips, hyNav, hyFooter, hyBanner, hyNews };

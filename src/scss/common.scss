@@ -49,10 +49,14 @@ a:focus {
 }
 
 body{
-    color: $white;
+    color: #333;
     // background-color: $body_bg;
     font-size: 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+}
+
+body, *, *::before, *::after {
+    box-sizing: border-box;
 }
 
 .container {
