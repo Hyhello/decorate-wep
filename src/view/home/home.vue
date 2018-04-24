@@ -5,79 +5,79 @@
  */
 <style lang="scss" scoped>
     .contentbox {width:100%;min-width:1200px;_width:1200px;background:#FFF;}
-.part1 {width:1198px;margin:0 auto;}
-.comtitle {text-align:center;margin-bottom:50px;letter-spacing:1px;}
-.comtitle span {display:inline-block;font-size:3.5rem;color:#DA251C;font-weight:500;width:200px;padding:70px 0 35px;border-bottom:1px solid #DA251C;}
-.nav_nav {width:1198px;margin:0 auto;text-align:center;}
-.nav_nav ul {display:inline-block;margin-bottom:50px;}
-.nav_nav ul li{float:left;}
-.nav_nav ul li a {display:inline-block;padding:10px 40px;border:1px solid #939AA0;color:#939AA0;text-decoration:none;transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
-.nav_nav ul li a.bl {border-left:none;}
-.nav_nav ul li a.leftbtn {border-radius:10px 0 0 10px;-webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;}
-.nav_nav ul li a.rightbtn {border-radius:0 10px 10px 0;-webkit-border-radius:0 10px 10px 0;-moz-border-radius:0 10px 10px 0;}
-.nav_nav ul li a:hover,
-.nav_nav ul li a.active {background:#DA251C;color:#FFEDED;border-color:#DA251C;}
+    .part1 {width:1198px;margin:0 auto;}
+    .comtitle {text-align:center;margin-bottom:50px;letter-spacing:1px;}
+    .comtitle span {display:inline-block;font-size:35px;color:#01C2BD;font-weight:500;width:200px;padding:70px 0 35px;border-bottom:1px solid #01C2BD;}
+    .nav_nav {width:1198px;margin:0 auto;text-align:center;}
+    .nav_nav ul {display:inline-block;margin-bottom:50px;}
+    .nav_nav ul li{float:left;}
+    .nav_nav ul li a {display:inline-block;padding:10px 40px;border:1px solid #939AA0;color:#939AA0;text-decoration:none;transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+    .nav_nav ul li a.bl {border-left:none;}
+    .nav_nav ul li a.leftbtn {border-radius:10px 0 0 10px;-webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;}
+    .nav_nav ul li a.rightbtn {border-radius:0 10px 10px 0;-webkit-border-radius:0 10px 10px 0;-moz-border-radius:0 10px 10px 0;}
+    .nav_nav ul li a:hover,
+    .nav_nav ul li a.active {background:#01C2BD;color:#FFEDED;border-color:#01C2BD;}
 
-.tabbox{width:1198px;margin:0 auto;margin-bottom:30px;}
-.tabbox li{float:left;margin-left:10px;margin-bottom:24px;width:292px;text-align:center;}
-.tabbox li a {display:inline-block;text-decoration:none;color:#000;text-align:center;transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
-.tabbox li a:hover {color:#DA251C;}
-.tabbox li a img {width:281px;height:169px;}
-.tabtext {display:block;width:292px;height:78px;line-height:70px;background:url(../../assets/shadow.png) no-repeat center top;}
-.part1_more {width:100%;text-align:center;margin-bottom:30px;}
-.part1_more a {display:inline-block;padding:10px 30px;border:1px solid #B4352F;border-radius:10px;-webkit-border-radius:10px;text-decoration:none;color:#B4352F;box-shadow:inset 0 0 1px #B4352F;-webkit-box-shadow:inset 0 0 1px #B4352F;}
-.part2 {width:100%;height:478px;background:url(../../assets/content_bg.png) no-repeat center center;background-size:cover;}
-.bgwhite span{color:#FFF;border-color:#FFF;}
-.text_text1,
-.text_text2 {text-align:center;color:#FFF;font-size:2.5rem;margin-bottom:15px;}
-.text_text1 {padding-top:30px;margin-bottom:20px;}
-.text_text2 {margin-bottom:50px;}
-.part2_more {width:100%;text-align:center;}
-.part2_more a {display:inline-block;padding:10px 30px;border:1px solid #FFF;border-radius:10px;-webkit-border-radius:10px;text-decoration:none;color:#FFF;box-shadow:inset 0 0 1px #FFF;-webkit-box-shadow:inset 0 0 1px #FFF;}
-.newtab {border:none;margin:0 auto;border-collapse:separate;border-spacing:12px;text-align:center;}
-.abb {position:relative;}
-.part3 {background:#FFF;padding-bottom:80px;}
-.part4 {width:100%;height:520px;background:url(../../assets/content2_bg.png) no-repeat center center;background-size:cover;}
-.part4_time {width:1200px;margin:0 auto;padding-top:20px;position:relative;}
-.part4tab {width:100%;text-align:center;border-spacing:10px;}
-.headertime{min-width:79px;min-height:88px;_height:88px;_width:88px;color:#D32820;font-weight:bold;background:url(../../assets/time_bg.png) no-repeat center center;}
-.time-title {font-size:2.5rem;padding-top:10px;padding-bottom:5px;}
-.part4_line {width:100%;height:1px;background:#FFF;overflow:hidden;font-size:0.1rem;zoom:1;position:absolute;left:0;bottom:105px;}
-.part5 {width:100%;text-align:center;background:#FFF;padding-bottom:80px;}
-.icon a{margin:5px;}
-.part6 {width:100%;height:604px;background:url(../../assets/footer_bg.png) no-repeat center center;background-size:cover;position:relative;}
-.footerbox {width:1200px;margin:0 auto;padding-top:80px;}
-.foot_part1,
-.foot_part2,
-.foot_part3{width:28%;float:left;}
-.foot_part4 {width:16%;float:left;text-align:right;}
-.foot_part1 li,
-.foot_part2 li,
-.foot_part3 li,
-.foot_part4 li {float:left;width:100%;margin-bottom:40px;}
-.foot_part1 li a,
-.foot_part2 li a,
-.foot_part3 li a,
-.foot_part4 li a {text-decoration:none;color:#C4C8CB;}
-.foot_part1 li a:hover,
-.foot_part2 li a:hover,
-.foot_part3 li a:hover,
-.foot_part4 li a:hover {text-decoration:underline;color:#C4C8CB;}
-.bottom {position:absolute;width:100%;height:161px;background:rgba(0,0,0,0.5);bottom:0;left:0;}
-.bottomcontent {width:1200px;position:absolute;left:50%;top:0;margin-left:-600px;}
-.bottomtext {float:right;text-align:left;margin-bottom:50px;}
-.bottomtext li {float:left;margin:30px 15px 0 15px;}
-.bottomtext li a {text-decoration:none;color:#C4C8CB;}
-.bottomtext li a:hover {text-decoration:underline;color:#C4C8CB;}
-.bottomicp {color:#C4C8CB;}
-.bottomicp p {margin:5px 0;}
+    .tabbox{width:1198px;margin:0 auto;margin-bottom:30px;}
+    .tabbox li{float:left;margin-left:10px;margin-bottom:24px;width:292px;text-align:center;}
+    .tabbox li a {display:inline-block;text-decoration:none;color:#000;text-align:center;transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+    .tabbox li a:hover {color:#01C2BD;}
+    .tabbox li a img {width:281px;height:169px;}
+    .tabtext {display:block;width:292px;height:78px;line-height:70px;background:url(../../assets/images/shadow.png) no-repeat center top;}
+    .part1_more {width:100%;text-align:center;margin-bottom:30px;}
+    .part1_more a {display:inline-block;padding:10px 30px;border:1px solid #01C2BD;border-radius:10px;-webkit-border-radius:10px;text-decoration:none;color:#01C2BD;box-shadow:inset 0 0 1px #01C2BD;-webkit-box-shadow:inset 0 0 1px #01C2BD;}
+    .part2 {width:100%;height:478px;background:url(../../assets/images/content_bg.png) no-repeat center center;background-size:cover;}
+    .bgwhite span{color:#FFF;border-color:#FFF;}
+    .text_text1,
+    .text_text2 {text-align:center;color:#FFF;font-size:25px;margin-bottom:15px;}
+    .text_text1 {padding-top:30px;margin-bottom:20px;}
+    .text_text2 {margin-bottom:50px;}
+    .part2_more {width:100%;text-align:center;}
+    .part2_more a {display:inline-block;padding:10px 30px;border:1px solid #FFF;border-radius:10px;-webkit-border-radius:10px;text-decoration:none;color:#FFF;box-shadow:inset 0 0 1px #FFF;-webkit-box-shadow:inset 0 0 1px #FFF;}
+    .newtab {border:none;margin:0 auto;border-collapse:separate;border-spacing:12px;text-align:center;}
+    .abb {position:relative;}
+    .part3 {background:#FFF;padding-bottom:80px;}
+    .part4 {width:100%;height:520px;background:url(../../assets/images/content2_bg.png) no-repeat center center;background-size:cover;}
+    .part4_time {width:1200px;margin:0 auto;padding-top:20px;position:relative;}
+    .part4tab {width:100%;text-align:center;border-spacing:10px;}
+    .headertime{min-width:79px;min-height:88px;_height:88px;_width:88px;color:#01C2BD;font-weight:bold;background:url(../../assets/images/time_bg.png) no-repeat center center;}
+    .time-title {font-size:25px;padding-top:10px;padding-bottom:5px;}
+    .part4_line {width:100%;height:1px;background:#FFF;overflow:hidden;font-size:1px;zoom:1;position:absolute;left:0;bottom:105px;}
+    .part5 {width:100%;text-align:center;background:#FFF;padding-bottom:80px;}
+    .icon a{margin:5px;}
+    .part6 {width:100%;height:604px;background:url(../../assets/images/footer_bg.png) no-repeat center center;background-size:cover;position:relative;}
+    .footerbox {width:1200px;margin:0 auto;padding-top:80px;}
+    .foot_part1,
+    .foot_part2,
+    .foot_part3{width:28%;float:left;}
+    .foot_part4 {width:16%;float:left;text-align:right;}
+    .foot_part1 li,
+    .foot_part2 li,
+    .foot_part3 li,
+    .foot_part4 li {float:left;width:100%;margin-bottom:40px;}
+    .foot_part1 li a,
+    .foot_part2 li a,
+    .foot_part3 li a,
+    .foot_part4 li a {text-decoration:none;color:#C4C8CB;}
+    .foot_part1 li a:hover,
+    .foot_part2 li a:hover,
+    .foot_part3 li a:hover,
+    .foot_part4 li a:hover {text-decoration:underline;color:#C4C8CB;}
+    .bottom {position:absolute;width:100%;height:161px;background:rgba(0,0,0,0.5);bottom:0;left:0;}
+    .bottomcontent {width:1200px;position:absolute;left:50%;top:0;margin-left:-600px;}
+    .bottomtext {float:right;text-align:left;margin-bottom:50px;}
+    .bottomtext li {float:left;margin:30px 15px 0 15px;}
+    .bottomtext li a {text-decoration:none;color:#C4C8CB;}
+    .bottomtext li a:hover {text-decoration:underline;color:#C4C8CB;}
+    .bottomicp {color:#C4C8CB;}
+    .bottomicp p {margin:5px 0;}
 </style>
 <template>
-  <div class="home-panel">
-      <hy-tips></hy-tips>
-      <hy-nav></hy-nav>
-      <hy-banner></hy-banner>
-      <div class="contentbox">
+    <div class="home-panel">
+        <hy-header></hy-header>
+        <hy-banner></hy-banner>
+        <!--content-->
+        <div class="contentbox">
             <div class="part1">
                 <h1 class="comtitle">
                     <span>实训课程</span>
@@ -93,7 +93,7 @@
                 <ul class="tabbox clearfix">
                     <li style="margin-left:0;">
                         <a href="###">
-                            <img src="../../assets/Img1.png" alt="javascript"/>
+                            <img src="../../assets/images/Img1.png" alt="javascript"/>
                             <span class="tabtext">
                                 javaScript入门篇
                             </span>
@@ -101,7 +101,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/Img2.png" alt="ps"/>
+                            <img src="../../assets/images/Img2.png" alt="ps"/>
                             <span class="tabtext">
                                 PS大神通关教程
                             </span>
@@ -109,7 +109,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/Img3.png" alt="java"/>
+                            <img src="../../assets/images/Img3.png" alt="java"/>
                             <span class="tabtext">
                                 JAVA入门第一季
                             </span>
@@ -117,7 +117,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/Img4.png" alt="python"/>
+                            <img src="../../assets/images/Img4.png" alt="python"/>
                             <span class="tabtext">
                                 python错误与异常
                             </span>
@@ -125,7 +125,7 @@
                     </li>
                     <li style="margin-left:0;">
                         <a href="###">
-                            <img src="../../assets/Img5.png" alt="css3"/>
+                            <img src="../../assets/images/Img5.png" alt="css3"/>
                             <span class="tabtext">
                                 十天精通CSS3
                             </span>
@@ -133,7 +133,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/Img6.png" alt="bootstrap"/>
+                            <img src="../../assets/images/Img6.png" alt="bootstrap"/>
                             <span class="tabtext">
                                 玩转Bootstrap(基础)
                             </span>
@@ -141,7 +141,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/Img7.png" alt="jq"/>
+                            <img src="../../assets/images/Img7.png" alt="jq"/>
                             <span class="tabtext">
                                 jQ基础教程
                             </span>
@@ -149,7 +149,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/Img8.png" alt="html"/>
+                            <img src="../../assets/images/Img8.png" alt="html"/>
                             <span class="tabtext">
                                 网页布局基础
                             </span>
@@ -178,25 +178,25 @@
                     <tr>
                         <td rowspan="2">
                             <div class="abb">
-                                <img src="../../assets/Img9.png" />
+                                <img src="../../assets/images/Img9.png" />
                                 <div class="alert_abb" style="display:none;">
                                     如何在比特工厂学习
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <img src="../../assets/Img10.png" />
+                            <img src="../../assets/images/Img10.png" />
                         </td>
                         <td>
-                            <img src="../../assets/Img11.png" />
+                            <img src="../../assets/images/Img11.png" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <img src="../../assets/Img12.png" />
+                            <img src="../../assets/images/Img12.png" />
                         </td>
                         <td>
-                            <img src="../../assets/Img13.png" />
+                            <img src="../../assets/images/Img13.png" />
                         </td>
                     </tr>
                 </table>
@@ -241,36 +241,36 @@
                         </tr>
                         <tr>
                             <td>
-                                <img src="../../assets/time.png" />
+                                <img src="../../assets/images/time.png" />
                             </td>
                             <td>
-                                <img src="../../assets/time.png" />
+                                <img src="../../assets/images/time.png" />
                             </td>
                             <td>
-                                <img src="../../assets/time.png" />
+                                <img src="../../assets/images/time.png" />
                             </td>
                             <td>
-                                <img src="../../assets/time.png" />
+                                <img src="../../assets/images/time.png" />
                             </td>
                             <td>
-                                <img src="../../assets/time.png" />
+                                <img src="../../assets/images/time.png" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <img src="../../assets/head.png" />
+                                <img src="../../assets/images/head.png" />
                             </td>
                             <td>
-                                <img src="../../assets/head.png" />
+                                <img src="../../assets/images/head.png" />
                             </td>
                             <td>
-                                <img src="../../assets/head.png" />
+                                <img src="../../assets/images/head.png" />
                             </td>
                             <td>
-                                <img src="../../assets/head.png" />
+                                <img src="../../assets/images/head.png" />
                             </td>
                             <td>
-                                <img src="../../assets/head.png" />
+                                <img src="../../assets/images/head.png" />
                             </td>
                         </tr>
                     </table>
@@ -282,13 +282,13 @@
                     <span>云编译</span>
                 </h1>
                 <div>
-                    <img src="../../assets/content3_bg.png" />
+                    <img src="../../assets/images/content3_bg.png" />
                 </div>
                 <div class="icon">
-                    <a href="##"><img src="../../assets/icon1.png" /></a>
-                    <a href="##"><img src="../../assets/icon2.png" /></a>
-                    <a href="##"><img src="../../assets/icon3.png" /></a>
-                    <a href="##"><img src="../../assets/icon4.png" /></a>
+                    <a href="##"><img src="../../assets/images/icon1.png" /></a>
+                    <a href="##"><img src="../../assets/images/icon2.png" /></a>
+                    <a href="##"><img src="../../assets/images/icon3.png" /></a>
+                    <a href="##"><img src="../../assets/images/icon4.png" /></a>
                 </div>
             </div>
             <div class="part6">
@@ -357,14 +357,12 @@
                 </div>
             </div>
         </div>
-      <!-- <hy-news></hy-news> -->
-      <hy-footer></hy-footer>
-  </div>
+    </div>
 </template>
 <script>
-  import { hyTips, hyNav, hyFooter, hyBanner, hyNews } from '@/components';
+  import { hyHeader, hyBanner } from '@/components';
 
   export default {
-    components: { hyTips, hyNav, hyFooter, hyBanner, hyNews }
+    components: { hyHeader, hyBanner }
   };
 </script>
