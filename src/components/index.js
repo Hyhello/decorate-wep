@@ -8,5 +8,5 @@
  import hyFooter from './footer/footer.vue';
  import hyBanner from './banner/banner.vue';
  import hyNews from './news/news.vue';
-
- export { hyHeader, hyFooter, hyBanner, hyNews };
+ import { Carousel, CarouselItem } from './Carousel';
+ export { hyHeader, hyFooter, hyBanner, hyNews, Carousel, CarouselItem };

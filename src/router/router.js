@@ -11,6 +11,9 @@ const home = r => require.ensure([], () => r(require('../view/home/home')), 'hom
 // text
 const text = r => require.ensure([], () => r(require('../view/text')), 'text');
 
+// comText
+const comText = r => require.ensure([], () => r(require('../view/comText')), 'comText');
+
 export default [
     {
         path: '/',
@@ -27,6 +30,10 @@ export default [
             {
                 path: 'text',
                 component: text
+            },
+            {
+                path: 'comText',
+                component: comText
             }
         ]
     }
