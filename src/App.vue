@@ -9,5 +9,16 @@
   @import 'src/scss/animate';
 </style>
 <template>
-  <router-view></router-view>
+    <div class="main-panel">
+        <hy-header></hy-header>
+        <router-view></router-view>
+        <hy-footer></hy-footer>
+    </div>
 </template>
+<script>
+    import { hyHeader, hyFooter } from '@/components';
+
+    export default {
+        components: { hyHeader, hyFooter }
+    };
+</script>

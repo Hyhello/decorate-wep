@@ -74,7 +74,6 @@
 </style>
 <template>
     <div class="home-panel">
-        <hy-header></hy-header>
         <hy-banner></hy-banner>
         <!--content-->
         <div class="contentbox">
@@ -360,9 +359,9 @@
     </div>
 </template>
 <script>
-  import { hyHeader, hyBanner } from '@/components';
+  import { hyBanner } from '@/components';
 
   export default {
-    components: { hyHeader, hyBanner }
+    components: { hyBanner }
   };
 </script>

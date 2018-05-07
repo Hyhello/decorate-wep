@@ -39,7 +39,7 @@
                             background-color: #373C42;
                             color: $white;
                         }
-                        &.active {
+                        &.router-link-active {
                             background-color: #373C42;
                             color: $white;
                         }
@@ -77,13 +77,9 @@
             </div>
             <div class="navbox">
                 <ul class="fl">
-                    <li><a href="./index.html" class="active">首页</a></li>
-                    <li><a href="###">关于我们</a></li>
-                    <li><a href="###">产品中心</a></li>
-                    <li><a href="###">新闻中心</a></li>
-                    <li><a href="###">客户案例</a></li>
-                    <li><a href="###">技术支持</a></li>
-                    <li><a href="###">客户留言</a></li>
+                    <li v-if="!item.hidden" v-for="(item, index) in routerList" :key="index">
+                        <router-link tag="a" :to="`/${item.path}`">{{item.meta.title}}</router-link>
+                    </li>
                 </ul>
             </div>
             <div class="header_search">
@@ -94,6 +90,11 @@
 </template>
 <script>
     export default {
-        name: 'hyHeader'
+        name: 'hyHeader',
+        computed: {
+            routerList () {
+                return this.$router.options.routes[0].children;
+            }
+        }
     };
 </script>
