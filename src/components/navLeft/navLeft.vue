@@ -19,10 +19,8 @@
             text-decoration: none;
             color: #000;
             border: 1px solid #EDEDED;
-            &.query_bt {
-                border-top: none;
-            }
-            &.active,
+            margin: -1px 0 0 0;
+            &.router-link-active,
             &:hover {
                 background-color: #DA251C;
                 color: #FFF;
@@ -33,15 +31,17 @@
 </style>
 <template>
     <ul class="query_nav">
-        <li><a href="#1" class="active">实训课程</a></li>
-        <li><a href="#2" class="query_bt">零基础课程</a></li>
-        <li><a href="#3" class="query_bt">中级课程</a></li>
-        <li><a href="#4" class="query_bt">高级课程</a></li>
-        <li><a href="#5" class="query_bt">面试题解析</a></li>
+        <li v-if="item.meta.desciption" v-for="(item, index) in routerList" :key="index">
+            <router-link :to="`/${item.path}`" tag="a">{{item.meta.title}}</router-link>
+        </li>
     </ul>
 </template>
 <script>
     export default {
-
+        computed: {
+            routerList () {
+                return this.$router.options.routes[0].children;
+            }
+        }
     };
 </script>

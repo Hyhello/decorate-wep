@@ -26,8 +26,14 @@
                 width: 1000px;
                 float: right;
                 .query_title {
+                    line-height: 16px;
+                    height: 16px;
                     font-size: 15px;
                     margin-bottom: 15px;
+                    .breadcrumb {
+                        display: inline-block;
+                        position: absolute;
+                    }
                 }
                 .right_content {
                     background-color: #FFF;
@@ -38,6 +44,16 @@
             }
         }
     }
+    .breadcrumb-enter-active,
+    .breadcrumb-leave-active {
+        transition: all .5s;
+    }
+
+    .breadcrumb-enter,
+    .breadcrumb-leave-active {
+        opacity: 0;
+        transform: translateX(20px);
+    }
 </style>
 <template>
     <div class="query_contentbox" :style="styles">
@@ -46,7 +62,11 @@
                 <slot name="left"></slot>
             </div>
             <div class="query_right">
-                <h2 class="query_title">实训课程</h2>
+                <transition-group class="query_title" tag="h2" name="breadcrumb">
+                    <span class="breadcrumb" v-if="$route.fullPath === `/${item.path}`" v-for="item in routerList" :key="item.path">
+                        {{$route.meta.title}}
+                    </span>
+                </transition-group>
                 <div class="right_content">
                     <slot name="right"></slot>
                 </div>
@@ -70,6 +90,9 @@
                     };
                 }
                 return {};
+            },
+            routerList () {
+                return this.$router.options.routes[0].children;
             }
         },
         mounted () {
