@@ -25,42 +25,48 @@ export default [
                 path: 'about',
                 component: _import('about/about'),
                 meta: {
-                    title: '关于我们'
+                    title: '关于我们',
+                    desciption: true
                 }
             },
             {
                 path: 'product',
                 component: _import('product/product'),
                 meta: {
-                    title: '产品中心'
+                    title: '产品中心',
+                    desciption: true
                 }
             },
             {
                 path: 'news',
                 component: _import('news/news'),
                 meta: {
-                    title: '新闻中心'
+                    title: '新闻中心',
+                    desciption: true
                 }
             },
             {
                 path: 'customerCase',
                 component: _import('customerCase/customerCase'),
                 meta: {
-                    title: '客户案例'
+                    title: '客户案例',
+                    desciption: true
                 }
             },
             {
                 path: 'technicalSupport',
                 component: _import('technicalSupport/technicalSupport'),
                 meta: {
-                    title: '技术支持'
+                    title: '技术支持',
+                    desciption: true
                 }
             },
             {
                 path: 'message',
                 component: _import('message/message'),
                 meta: {
-                    title: '用户留言'
+                    title: '用户留言',
+                    desciption: true
                 }
             }
         ]

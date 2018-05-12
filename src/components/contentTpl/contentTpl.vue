@@ -7,6 +7,7 @@
     @import 'src/scss/mixins';
 
     .query_contentbox {
+        font-size: 14px;
         width: 100%;
         min-width: 1200px;
         _width: 1200px;
@@ -25,7 +26,8 @@
                 width: 1000px;
                 float: right;
                 .query_title {
-                    margin-bottom: 20px;
+                    font-size: 15px;
+                    margin-bottom: 15px;
                 }
                 .right_content {
                     background-color: #FFF;
@@ -38,7 +40,7 @@
     }
 </style>
 <template>
-    <div class="query_contentbox">
+    <div class="query_contentbox" :style="styles">
         <div class="query_content">
             <div class="query_left">
                 <slot name="left"></slot>
@@ -54,6 +56,27 @@
 </template>
 <script>
     export default {
-        name: 'contentTpl'
+        name: 'contentTpl',
+        data () {
+            return {
+                clientHeight: 0
+            };
+        },
+        computed: {
+            styles () {
+                if (this.clientHeight) {
+                    return {
+                        'min-height': `${this.clientHeight}px`
+                    };
+                }
+                return {};
+            }
+        },
+        mounted () {
+            this.$nextTick(() => {
+                let slotLeft = this.$slots.left;
+                this.clientHeight = slotLeft && slotLeft[0].elm && slotLeft[0].elm.clientHeight;
+            });
+        }
     };
 </script>

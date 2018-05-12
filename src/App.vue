@@ -11,19 +11,23 @@
 <template>
     <div class="main-panel">
         <hy-header></hy-header>
-        <router-view></router-view>
-        <hy-footer v-if="showFooter"></hy-footer>
+        <template v-if="$route.meta.desciption">
+            <hy-banner></hy-banner>
+            <content-tpl>
+                <nav-left slot="left"></nav-left>
+                <div slot="right">
+                    <router-view></router-view>
+                </div>
+            </content-tpl>
+            <hy-footer></hy-footer>
+        </template>
+        <router-view v-else></router-view>
     </div>
 </template>
 <script>
-    import { hyHeader, hyFooter } from '@/components';
+    import { hyHeader, hyFooter, hyBanner, contentTpl, navLeft } from '@/components';
 
     export default {
-        components: { hyHeader, hyFooter },
-        computed: {
-            showFooter () {
-                return this.$route.path !== '/home';
-            }
-        }
+        components: { hyHeader, hyFooter, hyBanner, contentTpl, navLeft }
     };
 </script>
