@@ -7,6 +7,10 @@
  import hyHeader from './header/header.vue';
  import hyFooter from './footer/footer.vue';
  import hyBanner from './banner/banner.vue';
+ import hySwiper from './swiper/swiper.vue';
  import hyNews from './news/news.vue';
+ import navLeft from './navLeft/navLeft.vue';
  import { Carousel, CarouselItem } from './Carousel';
- export { hyHeader, hyFooter, hyBanner, hyNews, Carousel, CarouselItem };
+ import contentTpl from './contentTpl/contentTpl.vue';
+
+ export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl };

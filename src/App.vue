@@ -12,13 +12,18 @@
     <div class="main-panel">
         <hy-header></hy-header>
         <router-view></router-view>
-        <hy-footer></hy-footer>
+        <hy-footer v-if="showFooter"></hy-footer>
     </div>
 </template>
 <script>
     import { hyHeader, hyFooter } from '@/components';
 
     export default {
-        components: { hyHeader, hyFooter }
+        components: { hyHeader, hyFooter },
+        computed: {
+            showFooter () {
+                return this.$route.path !== '/home';
+            }
+        }
     };
 </script>

@@ -7,10 +7,20 @@
 
 </style>
 <template>
-    <div>vueTpl</div>
+    <div>
+        <hy-banner></hy-banner>
+        <content-tpl>
+            <nav-left slot="left"></nav-left>
+            <div slot="right">
+                123123
+            </div>
+        </content-tpl>
+    </div>
 </template>
 <script>
-    export default {
+    import { hyBanner, contentTpl, navLeft } from '@/components';
 
+    export default {
+        components: { hyBanner, contentTpl, navLeft }
     };
 </script>

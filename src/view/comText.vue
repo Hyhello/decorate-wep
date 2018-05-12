@@ -33,6 +33,15 @@
             <carousel-item>
                 <h3>3</h3>
             </carousel-item>
+            <carousel-item>
+                <h3>4</h3>
+            </carousel-item>
+            <carousel-item>
+                <h3>5</h3>
+            </carousel-item>
+            <carousel-item>
+                <h3>6</h3>
+            </carousel-item>
         </Carousel>
     </div>
 </template>

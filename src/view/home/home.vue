@@ -74,7 +74,7 @@
 </style>
 <template>
     <div class="home-panel">
-        <hy-banner></hy-banner>
+        <hy-swiper></hy-swiper>
         <!--content-->
         <div class="contentbox">
             <div class="part1">
@@ -359,9 +359,9 @@
     </div>
 </template>
 <script>
-  import { hyBanner } from '@/components';
+  import { hySwiper } from '@/components';
 
   export default {
-    components: { hyBanner }
+    components: { hySwiper }
   };
 </script>

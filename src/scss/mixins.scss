@@ -3,3 +3,13 @@
  * 时间：2018-04-03
  * 描述：混合类
  */
+
+ // 清除浮动
+ @mixin clearfix () {
+    zoom: 1;
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+ }

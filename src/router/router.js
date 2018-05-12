@@ -62,23 +62,23 @@ export default [
                 meta: {
                     title: '用户留言'
                 }
-            },
-            {
-                path: 'text',
-                component: _import('text'),
-                hidden: true,
-                meta: {
-                    title: '测试页面'
-                }
-            },
-            {
-                path: 'comText',
-                component: _import('comText'),
-                hidden: true,
-                meta: {
-                    title: '组件测试页面'
-                }
             }
         ]
+    },
+    {
+        path: '/text',
+        component: _import('text'),
+        hidden: true,
+        meta: {
+            title: '测试页面'
+        }
+    },
+    {
+        path: '/comText',
+        component: _import('comText'),
+        hidden: true,
+        meta: {
+            title: '组件测试页面'
+        }
     }
 ];
