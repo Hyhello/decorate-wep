@@ -32,6 +32,7 @@ module.exports = {
     "no-mixed-spaces-and-tabs": 0,
     "semi": ["error", "always"],
     "no-useless-return": 0,
+    'standard/no-callback-literal': 0,
     "no-multi-spaces": ["error", { ignoreEOLComments: true }]
   }
 }

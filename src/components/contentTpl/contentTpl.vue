@@ -12,6 +12,7 @@
         min-width: 1200px;
         _width: 1200px;
         padding-bottom: 50px;
+        height: 1000px;
         .query_content {
             width: 1200px;
             margin: 0 auto;
@@ -30,6 +31,7 @@
                     height: 16px;
                     font-size: 15px;
                     margin-bottom: 15px;
+                    position: relative;
                     .breadcrumb {
                         display: inline-block;
                         position: absolute;
@@ -56,9 +58,9 @@
     }
 </style>
 <template>
-    <div class="query_contentbox" :style="styles">
+    <div class="query_contentbox">
         <div class="query_content">
-            <div class="query_left">
+            <div class="query_left" :style="styles">
                 <slot name="left"></slot>
             </div>
             <div class="query_right">
