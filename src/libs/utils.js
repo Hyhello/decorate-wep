@@ -16,7 +16,6 @@
  export const addStyle = (el, attr, attrValue) => {
     const vendors = ['Webkit', 'Moz', 'Ms', 'O'];
     vendors.forEach(item => {
-        console.log(`${item}${attr.charAt(0).toUpperCase()}${attr.substr(1)}`);
         el.style[`${item}${attr.charAt(0).toUpperCase()}${attr.substr(1)}`] = attrValue;
     });
  };
