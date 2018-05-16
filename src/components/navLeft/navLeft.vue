@@ -38,7 +38,7 @@
     </ul>
 </template>
 <script>
-    import { addStyle, debounce } from '@/libs/utils';
+    import { addStyle, debounce, getDom } from '@/libs/utils';
 
     export default {
         data () {
@@ -52,27 +52,24 @@
             }
         },
         mounted () {
-            this.scrollEvent = debounce(500, this.handleScroll);
+            this.scrollEvent = debounce(200, this.handleScroll);
             window.addEventListener('scroll', this.scrollEvent, false);
         },
         methods: {
             getPos () {
                 let rect = this.$el.getBoundingClientRect();
-                let top = this.getDom('scrollTop') + rect.top;
-                let left = this.getDom('scrollLeft') + rect.left;
+                let top = getDom('scrollTop') + rect.top;
+                let left = getDom('scrollLeft') + rect.left;
                 return (this.pos = {
                     top,
                     left,
                     height: rect.height
                 });
             },
-            getDom (type) {
-                return document.documentElement[type] || document.body[type];
-            },
             handleScroll () {
                 this.$nextTick(() => {
-                    let scrollTop = this.getDom('scrollTop');
-                    let clientHeight = this.getDom('clientHeight');
+                    let scrollTop = getDom('scrollTop');
+                    let clientHeight = getDom('clientHeight');
                     let scroll = this.pos || this.getPos();
                     let scrollX = Math.ceil((clientHeight - scroll.height) / 2) + scrollTop - scroll.top;
                     if (scrollX < 0) {

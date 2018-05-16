@@ -12,7 +12,6 @@
         min-width: 1200px;
         _width: 1200px;
         padding-bottom: 50px;
-        height: 1000px;
         .query_content {
             width: 1200px;
             margin: 0 auto;
@@ -38,10 +37,7 @@
                     }
                 }
                 .right_content {
-                    background-color: #FFF;
                     width: 980px;
-                    padding: 10px;
-                    margin-bottom: 15px;
                 }
             }
         }

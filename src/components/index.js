@@ -12,5 +12,6 @@
  import navLeft from './navLeft/navLeft.vue';
  import { Carousel, CarouselItem } from './Carousel';
  import contentTpl from './contentTpl/contentTpl.vue';
+ import backTop from './backTop/backTop.vue';
 
- export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl };
+ export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl, backTop };

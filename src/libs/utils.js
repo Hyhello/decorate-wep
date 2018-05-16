@@ -38,3 +38,68 @@
         }, idea);
     };
  };
+
+ // 绑定事件
+ export const addEvent = function (target, type, fn) {
+    if (target.attachEvent) {
+        target.attachEvent(['on' + type], fn);
+    } else if (target.addEventListener) {
+        target.addEventListener(type, fn, false);
+    } else {
+        target['on' + type] = fn;
+    }
+ };
+
+ export const removeEvent = function (target, type, fn) {
+    if (target.detachEvent) {
+        target.detachEvent(['on' + type], fn);
+    } else if (target.removeEventListener) {
+        target.removeEventListener(type, fn, false);
+    } else {
+        target['on' + type] = null;
+    }
+ };
+
+ export const addOnce = function (target, type, fn) {
+    var listener = function (e) {
+        fn && fn.call(this, e);
+        removeEvent(target, type, listener);
+    };
+    addEvent(target, type, listener);
+ };
+
+ export const getDom = (type) => {
+    return document.documentElement[type] || document.body[type];
+ };
+
+ export function scrollTop (el, from = 0, to, duration = 500) {
+    if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = (
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (callback) {
+                return window.setTimeout(callback, 1000 / 60);
+            }
+        );
+    }
+    const difference = Math.abs(from - to);
+    const step = Math.ceil(difference / duration * 50);
+
+    function scroll (start, end, step) {
+        if (start === end) return;
+
+        let d = (start + step > end) ? end : start + step;
+        if (start > end) {
+            d = (start - step < end) ? end : start - step;
+        }
+
+        if (el === window) {
+            window.scrollTo(d, d);
+        } else {
+            el.scrollTop = d;
+        }
+        window.requestAnimationFrame(() => scroll(d, end, step));
+    }
+    scroll(from, to, step);
+}

@@ -7,6 +7,7 @@
   @import 'normalize.css';
   @import 'src/scss/common';
   @import 'src/scss/animate';
+
 </style>
 <template>
     <div class="main-panel">
@@ -22,12 +23,14 @@
             <hy-footer></hy-footer>
         </template>
         <router-view v-else></router-view>
+        <!-- 回到顶部 -->
+        <back-top transition="fadeRight"></back-top>
     </div>
 </template>
 <script>
-    import { hyHeader, hyFooter, hyBanner, contentTpl, navLeft } from '@/components';
+    import { hyHeader, hyFooter, hyBanner, contentTpl, navLeft, backTop } from '@/components';
 
     export default {
-        components: { hyHeader, hyFooter, hyBanner, contentTpl, navLeft }
+        components: { hyHeader, hyFooter, hyBanner, contentTpl, navLeft, backTop }
     };
 </script>
