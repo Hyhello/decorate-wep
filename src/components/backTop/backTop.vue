@@ -41,7 +41,7 @@
             },
             duration: {
                 type: [Number, String],
-                default: 500
+                default: 1000
             },
             placement: {
                 type: Object,

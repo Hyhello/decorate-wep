@@ -79,14 +79,14 @@
         <div class="contentbox">
             <div class="part1">
                 <h1 class="comtitle">
-                    <span>实训课程</span>
+                    <span>产品类型</span>
                 </h1>
                 <div class="nav_nav">
                     <ul class="clearfix">
                         <li><a href="##" class="leftbtn active">精选课程</a></li>
                         <li><a href="##" class="bl">精选博文</a></li>
                         <li><a href="##" class="bl">实训案例</a></li>
-                        <li><a href="##" class="bl rightbtn">学员问答</a></li>
+                        <li><a href="##" class="bl rightbtn">声学基础材料</a></li>
                     </ul>
                 </div>
                 <ul class="tabbox clearfix">

@@ -23,7 +23,7 @@
 </style>
 <template>
     <div class="autoHeight">
-        <Carousel v-model="currentValue">
+        <!-- <Carousel v-model="currentValue">
             <carousel-item>
                 <h3>1</h3>
             </carousel-item>
@@ -42,14 +42,17 @@
             <carousel-item>
                 <h3>6</h3>
             </carousel-item>
-        </Carousel>
+        </Carousel> -->
+        <breadcrumb>
+            <breadcrumb-item to="/home"></breadcrumb-item>
+        </breadcrumb>
     </div>
 </template>
 <script>
-    import { Carousel, CarouselItem } from '@/components';
+    import { Carousel, CarouselItem, breadcrumbItem, breadcrumb } from '@/components';
 
     export default {
-        components: { Carousel, CarouselItem },
+        components: { Carousel, CarouselItem, breadcrumbItem, breadcrumb },
         data () {
             return {
                 currentValue: 2
