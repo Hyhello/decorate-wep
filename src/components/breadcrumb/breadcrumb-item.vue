@@ -26,22 +26,40 @@
 </style>
 <template>
     <span class="breadcrumb-item__panel">
-        <router-link class="breadcrumb-item__inner" :class="{'is-link': !!this.to}" :tag="linkTag" :to="to">首页</router-link>
-        <span class="breadcrumb-item__separator">/</span>
+        <router-link class="breadcrumb-item__inner" :class="{'is-link': !!this.to}" :tag="linkTag" :to="to"><slot></slot></router-link>
+        <span class="breadcrumb-item__separator">{{separator}}</span>
     </span>
 </template>
 <script>
     export default {
-        name: 'breadcrumbItem',
+        name: 'BreadcrumbItem',
         props: {
             to: {
                 type: [Object, String],
                 default: ''
             }
         },
+        data () {
+            return {
+                separator: ''
+            };
+        },
         computed: {
             linkTag () {
                 return this.to ? 'a' : 'span';
+            },
+            hasParent () {
+                return this.$parent.$options.name === 'Breadcrumb';
+            }
+        },
+        mounted () {
+            this.updateSeparator();
+        },
+        methods: {
+            updateSeparator () {
+                if (this.hasParent) {
+                    this.separator = this.$parent.separator;
+                }
             }
         }
     };

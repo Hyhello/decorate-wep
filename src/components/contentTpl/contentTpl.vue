@@ -26,15 +26,12 @@
                 width: 1000px;
                 float: right;
                 .query_title {
+                    font-weight: normal;
                     line-height: 16px;
                     height: 16px;
                     font-size: 15px;
                     margin-bottom: 15px;
                     position: relative;
-                    .breadcrumb {
-                        display: inline-block;
-                        position: absolute;
-                    }
                 }
                 .right_content {
                     width: 980px;
@@ -45,6 +42,8 @@
     .breadcrumb-enter-active,
     .breadcrumb-leave-active {
         transition: all .5s;
+        display: inline-block;
+        position: absolute;
     }
 
     .breadcrumb-enter,
@@ -60,11 +59,14 @@
                 <slot name="left"></slot>
             </div>
             <div class="query_right">
-                <transition-group class="query_title" tag="h2" name="breadcrumb">
-                    <span class="breadcrumb" v-if="$route.fullPath === `/${item.path}`" v-for="item in routerList" :key="item.path">
-                        {{$route.meta.title}}
-                    </span>
-                </transition-group>
+                <breadcrumb tag="h2" class="query_title">
+                    <breadcrumb-item to="/home">首页</breadcrumb-item>
+                    <transition-group name="breadcrumb">
+                        <breadcrumb-item v-if="$route.fullPath === `/${item.path}`" v-for="item in routerList" :key="item.path">
+                            {{$route.meta.title}}
+                        </breadcrumb-item>
+                    </transition-group>
+                </breadcrumb>
                 <div class="right_content">
                     <slot name="right"></slot>
                 </div>
@@ -73,8 +75,11 @@
     </div>
 </template>
 <script>
+    import { BreadcrumbItem, Breadcrumb } from '../breadcrumb';
+
     export default {
         name: 'contentTpl',
+        components: { BreadcrumbItem, Breadcrumb },
         data () {
             return {
                 clientHeight: 0

@@ -13,7 +13,6 @@
  import { Carousel, CarouselItem } from './Carousel';
  import contentTpl from './contentTpl/contentTpl.vue';
  import backTop from './backTop/backTop.vue';
- import breadcrumb from './breadcrumb/breadcrumb.vue';
- import breadcrumbItem from './breadcrumb/breadcrumb-item.vue';
+ import { Breadcrumb, BreadcrumbItem } from './breadcrumb';
 
- export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl, backTop, breadcrumb, breadcrumbItem };
+ export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl, backTop, Breadcrumb, BreadcrumbItem };

@@ -44,15 +44,15 @@
             </carousel-item>
         </Carousel> -->
         <breadcrumb>
-            <breadcrumb-item to="/home"></breadcrumb-item>
+            <breadcrumb-item to="/home">首页</breadcrumb-item>
         </breadcrumb>
     </div>
 </template>
 <script>
-    import { Carousel, CarouselItem, breadcrumbItem, breadcrumb } from '@/components';
+    import { Carousel, CarouselItem, BreadcrumbItem, Breadcrumb } from '@/components';
 
     export default {
-        components: { Carousel, CarouselItem, breadcrumbItem, breadcrumb },
+        components: { Carousel, CarouselItem, BreadcrumbItem, Breadcrumb },
         data () {
             return {
                 currentValue: 2
