@@ -48,7 +48,7 @@
 </style>
 <template>
     <ul>
-        <li v-for="(item, index) in 10" :key="index" class="right_content clearfix">
+        <li v-for="(item, index) in 10" :key="index" v-animate-line class="right_content clearfix">
             <div class="right_img fl">
                 <img src="../../assets/images/course.png" />
             </div>
@@ -59,7 +59,7 @@
                 <div class="right_bottom">
                     <span class="mr30">学员要求：<span class="right_color">无编程经验要求</span></span>
                     <span>课时：<span class="right_color">60</span></span>
-                    <a href="./detail.html" class="begin">开始学习</a>
+                    <a href="javascript: void(0);" class="begin">开始学习</a>
                 </div>
             </div>
         </li>

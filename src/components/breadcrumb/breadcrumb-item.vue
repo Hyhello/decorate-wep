@@ -14,6 +14,9 @@
                 text-decoration: none;
                 transition: color .2s cubic-bezier(.645, .045, .355, 1);
                 color: #303133;
+                &:hover {
+                    color: #01C2BD;
+                }
             }
         }
         .breadcrumb-item__separator {

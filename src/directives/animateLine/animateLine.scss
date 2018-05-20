@@ -1,0 +1,10 @@
+.v-animate-line {
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    z-index: 999;
+    left: '50%';
+    bottom: 0;
+    background-color: #01C2BD;
+    transition: all 0.5s;
+}

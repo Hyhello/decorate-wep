@@ -23,9 +23,9 @@
             margin: -1px 0 0 0;
             &.router-link-active,
             &:hover {
-                background-color: #DA251C;
+                background-color: #01C2BD;
                 color: #FFF;
-                border-color: #DA251C;
+                border-color: #01C2BD;
             }
         }
     }

@@ -4,6 +4,14 @@
  * 描述：utils.js
  */
 
+ const _toString = ({}).toString;
+ const _hasOwn = ({}).hasOwnProperty;
+
+ // type
+ export const _typeOf = (target) => {
+    return _toString.call(target).replace(/^\[object (\w+)\]$/i, '$1').toLowerCase();
+ };
+
  // 判断是否是一个number
  export const ensureNumber = (n) => {
      return (typeof n === 'number' && !isNaN(n));
@@ -103,3 +111,15 @@
     }
     scroll(from, to, step);
 }
+
+// hasOwn
+export const hasOwn = (target, attr) => {
+    return _hasOwn.call(target, attr);
+};
+
+// addClass
+export const addClass = (el, classes) => {
+    const reg = new RegExp('\\b' + classes + '\\b', 'i');
+    if (reg.test(el.className)) return;
+    el.className = `${el.className} ${classes}`.match(/\S+/gi).join(' ');
+};

@@ -4,6 +4,7 @@
  * 描述：内容模板
  */
 <style lang="scss" scoped>
+    @import 'src/scss/vars';
     @import 'src/scss/mixins';
 
     .query_contentbox {
@@ -27,11 +28,14 @@
                 float: right;
                 .query_title {
                     font-weight: normal;
-                    line-height: 16px;
-                    height: 16px;
                     font-size: 15px;
                     margin-bottom: 15px;
+                    background-color: $white;
+                    height: 45px;
+                    line-height: 45px;
+                    padding: 0 15px;
                     position: relative;
+                    border-left: 4px solid #01C2BD;
                 }
                 .right_content {
                     width: 980px;
