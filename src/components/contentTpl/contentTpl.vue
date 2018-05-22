@@ -38,7 +38,7 @@
                     border-left: 4px solid #01C2BD;
                 }
                 .right_content {
-                    width: 980px;
+                    width: 1000px;
                 }
             }
         }

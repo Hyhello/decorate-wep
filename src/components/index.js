@@ -14,5 +14,6 @@
  import contentTpl from './contentTpl/contentTpl.vue';
  import backTop from './backTop/backTop.vue';
  import { Breadcrumb, BreadcrumbItem } from './breadcrumb';
+ import animatePiano from './animatePiano/animatePiano.js';
 
- export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl, backTop, Breadcrumb, BreadcrumbItem };
+ export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl, backTop, Breadcrumb, BreadcrumbItem, animatePiano };

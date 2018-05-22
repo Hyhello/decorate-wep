@@ -6,6 +6,7 @@
 
  const _toString = ({}).toString;
  const _hasOwn = ({}).hasOwnProperty;
+ const _slice = ([]).slice;
 
  // type
  export const _typeOf = (target) => {
@@ -122,4 +123,52 @@ export const addClass = (el, classes) => {
     const reg = new RegExp('\\b' + classes + '\\b', 'i');
     if (reg.test(el.className)) return;
     el.className = `${el.className} ${classes}`.match(/\S+/gi).join(' ');
+};
+
+// isHTMLElement
+export const isNode = (target) => {
+    return target.nodeType && target.nodeType === 1;
+};
+
+// -a-b => AB
+export const clamecase = (str) => {
+    return str.replace(/-(\w)/gi, ($0, $1) => {
+        return $1.toUpperCase();
+    });
+};
+
+// setStyle
+export const setStyle = (target, styles, prefix) => {
+    if (!isNode(target) || _typeOf(styles) !== 'object') return;
+    for (let i in styles) {
+        if (hasOwn(styles, i)) {
+            if (prefix) {
+                setCss3(clamecase(i), styles[i]);
+            } else {
+                target.style[clamecase(i)] = styles[i];
+            }
+        }
+    }
+};
+
+// setCss3
+export const setCss3 = (target, value) => {
+    const prefix = ['Webkit', 'O', 'Moz', 'Ms'];
+    prefix.forEach(item => {
+        target.style[`${item}${target.charAt(0).toUpperCase()}${target.substr(1)}`] = value;
+    });
+    target.style[target] = value;
+};
+
+// like Array => Array
+export const toArray = (target) => {
+    return _slice.call(target);
+};
+
+// toNumber
+export const toNumber = (val) => {
+    let n = parseFloat(val);
+    return isNaN(n)
+                ? val
+                : n;
 };
