@@ -23,8 +23,8 @@
 <template>
     <ul class="news-panel">
         <li class="news-panel-item" v-for="(item, index) in 10" :key="index">
-            <animate-piano :content="content"></animate-piano>
-            <!-- <a href="javascript: void(0);" :animate-piano-duration="config.duration" :animate-piano-recline="config.recline" :animate-piano-offset="config.offset" v-animate-piano="content"></a> -->
+            <!-- <animate-piano :content="content"></animate-piano> -->
+            <a href="javascript: void(0);" :animate-piano-duration="config.duration" :animate-piano-recline="config.recline" :animate-piano-offset="config.offset" v-animate-piano="content"></a>
             <span class="news-item-time">2018-05-17</span>
         </li>
     </ul>

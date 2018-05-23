@@ -143,7 +143,7 @@ export const setStyle = (target, styles, prefix) => {
     for (let i in styles) {
         if (hasOwn(styles, i)) {
             if (prefix) {
-                setCss3(clamecase(i), styles[i]);
+                setCss3(target, clamecase(i), styles[i]);
             } else {
                 target.style[clamecase(i)] = styles[i];
             }
@@ -152,10 +152,10 @@ export const setStyle = (target, styles, prefix) => {
 };
 
 // setCss3
-export const setCss3 = (target, value) => {
+export const setCss3 = (target, attr, value) => {
     const prefix = ['Webkit', 'O', 'Moz', 'Ms'];
     prefix.forEach(item => {
-        target.style[`${item}${target.charAt(0).toUpperCase()}${target.substr(1)}`] = value;
+        target.style[`${item}${attr.charAt(0).toUpperCase()}${attr.substr(1)}`] = value;
     });
     target.style[target] = value;
 };
