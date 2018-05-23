@@ -4,6 +4,7 @@
  * 描述：animatePiano.js
  */
 
+import Velocity from 'velocity-animate';
 import { setStyle, toArray } from '@/libs/utils';
 
 // 动画函数
@@ -20,14 +21,13 @@ const _default = {
     duration: 500,          // 晃动时间
     recline: 0.1            // 每像素偏移量
 };
-console.log(_default, easeOutElastic);
 
 // 切分tag
 const _splitToTag = (el, value) => {
     const textArr = value.split('');
     let strTpl = '';
     textArr.forEach(item => {
-        strTpl += `<${this.options.tag}>${item}</${this.options.tag}>`;
+        strTpl += `<span>${item}</span>`;
     });
     el.innerHTML = strTpl;
 };
@@ -35,102 +35,125 @@ const _splitToTag = (el, value) => {
 // _toPosfix
 const _toPosfix = (el) => {
     el._originalPosArr = [];
-    const childs = toArray(el.children);
-    childs.forEach(item => {
-        console.log(item.offsetLeft);
-        console.log(item.offsetTop);
+    const childs = el._childs_ = toArray(el.children);
+    childs.forEach((item, index) => {
+        el._originalPosArr[index] = {
+            left: item.offsetLeft,
+            top: item.offsetTop
+        };
     });
+    childs.forEach((item, index) => {
+        setStyle(item, {
+            position: 'absolute',
+            left: `${el._originalPosArr[index].left}px`,
+            top: `${el._originalPosArr[index].top}px`
+        });
+    });
+};
+
+// 设置config
+const setConfig = (el, context) => {
+    let result = {};
+    let duration = el.getAttribute('animate-piano-duration');
+    let recline = el.getAttribute('animate-piano-recline');
+    let offset = el.getAttribute('animate-piano-offset');
+    (duration = (context && context[duration]) || duration) && (result.duration = duration);
+    (recline = (context && context[recline]) || recline) && (result.spinner = recline);
+    (offset = (context && context[offset]) || offset) && (result.offset = offset);
+    return Object.assign({}, _default, result);
+};
+
+// 绑定事件
+const bindFire = (el) => {
+    let offsetPos;
+    // 鼠标移入
+    el.__outSideEnter__ = (ev) => {
+        const rect = el.getBoundingClientRect();
+        offsetPos = {
+            xPos: ev.pageX - rect.left,
+            yPos: ev.pageY - rect.top
+        };
+    };
+    // 鼠标移动
+    el.__outSideMove__ = (ev) => {
+        const rect = el.getBoundingClientRect();
+        const offsetX = ev.pageX - rect.left;
+        const offsetY = ev.pageY - rect.top - offsetPos.yPos;
+        // 偏移量大于this.offset;
+        if (Math.abs(offsetY) > el._config_.offset) return;
+        // 方向
+        let placement = offsetY > 0;                   // 移动方向
+
+        el._childs_.forEach((item, index) => {
+            const originalPos = el._originalPosArr[index];
+            let reclineNum = Math.abs(offsetX - originalPos.left) * el._config_.recline;
+            reclineNum *= placement ? 1 : -1;
+            let resY = originalPos.top + offsetY - reclineNum;
+
+            if (placement && resY < originalPos.top) {
+                resY = originalPos.top;
+            } else if (!placement && resY > originalPos.top) {
+                resY = originalPos.top;
+            }
+            setStyle(item, {
+                top: `${resY}px`
+            });
+        });
+    };
+    // 鼠标移出
+    el.__outSideLeave__ = () => {
+        el._childs_.forEach((item, index) => {
+            Velocity(item, {
+                top: el._originalPosArr[index].top
+            }, {
+                easing: 'spring',
+                progress: easeOutElastic,
+                duration: el._config_.duration
+            });
+        });
+    };
+    el.addEventListener('mouseenter', el.__outSideEnter__, false);
+    el.addEventListener('mousemove', el.__outSideMove__, false);
+    el.addEventListener('mouseleave', el.__outSideLeave__, false);
 };
 
 export default {
     name: 'animatePiano',
     bind (el, { value }, { context }) {
+        if (!value) return;
+        setStyle(el, {
+            position: 'relative'
+        });
         // 读取配置
-        const config = Object.assign({}, _default, value || {});
-        const getVal = el.innerHTML;
-        console.log(getVal);
-        console.log(config);
-        // setStyle({
-        //     position: 'relative'
-        // });
-        // _splitToTag(el, value);
-        // _toPosfix(el);
-        // el.__outSideEnter__ = (ev) => {
-        //     let el = ev.target || ev.srcElement;
-        //     if (el.tagName === 'SPAN') {
-        //         el._originPosY = el.offsetTop;
-        //         el.__yPos__ = ev.pageY - el.offsetTop;
-        //     }
-        // };
-        // el.__outSideMove__ = (ev) => {
-        //     let el = ev.target || ev.srcElement;
-        //     if (el.tagName === 'SPAN') {
-        //         let t = ev.pageY - el.__yPos__;
-        //         if (Math.abs(t) > _default.offset) {
-        //             elReset(el);
-        //         } else {
-        //             let indx = -1;
-        //             let childrens = toArray(el.parentNode.children);
-        //             childrens.forEach((item, index) => {
-        //                 if (item === el) {
-        //                     indx = index;
-        //                 }
-        //             });
-        //             childrens[indx - 1].style.top = t - 1.4 + 'px';
-        //             childrens[indx + 1].style.top = t - 1.4 + 'px';
-        //             // toArray(el.parentNode.children).forEach();
-        //             el.style.top = t + 'px';
-        //         }
-        //     }
-        // };
-        // el.__outSideOut__ = (ev) => {
-        //     let el = ev.target || ev.srcElement;
-        //     if (el.tagName === 'SPAN') {
-        //         elReset(el);
-        //     }
-        // };
-
-        // // 重置
-        // const elReset = (el) => {
-        //     el.style.top = el._originPosY + 'px';
-        //     delete el.__yPos__;
-        //     delete el._originPosY;
-        // };
-
-        // // 绑定事件
-        // el.addEventListener('mouseenter', el.__outSideEnter__, false);
-        // el.addEventListener('mousemove', el.__outSideMove__, false);
-        // el.addEventListener('mouseleave', el.__outSideOut__, false);
-
-        // context.$nextTick(() => {
-        //     const childs = toArray(el.children);
-        //     let res = {
-        //         posX: [],
-        //         posY: []
-        //     };
-        //     // 获取offset
-        //     childs.forEach((item, index) => {
-        //         res.posX[index] = item.offsetLeft;
-        //         res.posY[index] = item.offsetTop;
-        //     });
-        //     childs.forEach((item, index) => {
-        //         setStyle(item, {
-        //             position: 'absolute',
-        //             left: `${res.posX[index]}px`,
-        //             top: `${res.posY[index]}px`
-        //         });
-        //     });
-        //     res = {
-        //         posX: [],
-        //         posY: []
-        //     };
-        // });
+        el._config_ = setConfig(el, context);
+        // 拆分
+        _splitToTag(el, value);
+        // 获取初始化定位
+        context.$nextTick(() => {
+            _toPosfix(el);
+        });
+        // 绑定事件
+        bindFire(el);
     },
-    update (el) {
-        console.log(el.innerHTML);
+    update (el, {value, oldValue}, { context }) {
+        if (value === oldValue || !value) return;
+        // 读取配置
+        el._config_ = setConfig(el, context);
+        // 拆分
+        _splitToTag(el, value);
+        // 获取初始化定位
+        context.$nextTick(() => {
+            _toPosfix(el);
+        });
     },
-    unbind (el) {}
-    // update (el, { value }) {
-
-    // }
+    unbind (el) {
+        el.removeEventListener('mouseenter', el.__outSideEnter__, false);
+        el.removeEventListener('mousemove', el.__outSideMove__, false);
+        el.removeEventListener('mouseleave', el.__outSideLeave__, false);
+        el.__outSideEnter__ = null;
+        el.__outSideMove__ = null;
+        el.__outSideLeave__ = null;
+        el._originalPosArr = null;
+        el._childs_ = null;
+    }
 };

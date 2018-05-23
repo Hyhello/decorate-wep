@@ -104,7 +104,8 @@ export default {
                     top: this.originalPosArr[index].top
                 }, {
                     easing: 'spring',
-                    progress: easeOutElastic
+                    progress: easeOutElastic,
+                    duration: this.duration
                 });
             });
         },
