@@ -59,7 +59,7 @@
                 <div class="right_bottom">
                     <span class="mr30">学员要求：<span class="right_color">无编程经验要求</span></span>
                     <span>课时：<span class="right_color">60</span></span>
-                    <a href="javascript: void(0);" class="begin">开始学习</a>
+                    <a href="javascript: void(0);" class="begin">查看详情</a>
                 </div>
             </div>
         </li>
