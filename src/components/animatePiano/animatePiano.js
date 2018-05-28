@@ -100,6 +100,7 @@ export default {
         // 鼠标移出
         handleLeave () {
             this.childs.forEach((item, index) => {
+                Velocity(item, 'stop');
                 Velocity(item, {
                     top: this.originalPosArr[index].top
                 }, {

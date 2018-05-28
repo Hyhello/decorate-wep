@@ -62,12 +62,11 @@ html, body {
 
 .container {
     position: relative;
-    min-width: 1170px;
+    background-color: $white;
+    padding: 15px;
+    font-size: 14px;
     width: 100%;
-    .container-main {
-        width: 1170px;
-        margin: 0 auto;
-    }
+    box-sizing: border-box;
 }
 
 .fl {

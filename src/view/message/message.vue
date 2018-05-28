@@ -7,7 +7,11 @@
 
 </style>
 <template>
-    <div>vueTpl</div>
+    <div class="container">
+        <div class="">
+            <label for="">您的姓名：</label>
+        </div>
+    </div>
 </template>
 <script>
     export default {

@@ -5,12 +5,14 @@ import router from './router';
 import store from './store';
 import svgIcon from './icons';
 import ElementUI from 'element-ui';
+import waves from '@/directives/waves';
 import animateLine from '@/directives/animateLine';
 import animatePiano from '@/directives/animatePiano';
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false;
 
+Vue.use(waves);
 Vue.use(svgIcon);
 Vue.use(ElementUI);
 Vue.use(animateLine);

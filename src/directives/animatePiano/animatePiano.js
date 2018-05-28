@@ -103,6 +103,7 @@ const bindFire = (el) => {
     // 鼠标移出
     el.__outSideLeave__ = () => {
         el._childs_.forEach((item, index) => {
+            Velocity(item, 'stop');
             Velocity(item, {
                 top: el._originalPosArr[index].top
             }, {

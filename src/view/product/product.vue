@@ -4,9 +4,10 @@
  * 描述：产品中心
  */
 <style lang="scss" scoped>
+    @import 'src/scss/vars';
 
     .right_content {
-       background-color: #FFF;
+       background-color: $white;
         width: 980px;
         padding: 10px;
         margin-bottom: 15px;
@@ -31,13 +32,14 @@
             }
             a.begin {
                 display: inline-block;
-                padding: 6px 12px;
-                background-color: #D8251C;
+                padding: 8px 12px;
+                background-color: $global_color;
                 position: absolute;
                 bottom: 0;
                 right: 10px;
-                color: #FFF;
+                color: $white;
                 text-decoration: none;
+                border-radius: 4px;
             }
         }
         .right_bottom {

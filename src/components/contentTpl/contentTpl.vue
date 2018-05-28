@@ -12,7 +12,7 @@
         width: 100%;
         min-width: 1200px;
         _width: 1200px;
-        padding-bottom: 50px;
+        padding-bottom: 15px;
         .query_content {
             width: 1200px;
             margin: 0 auto;

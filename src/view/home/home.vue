@@ -83,10 +83,10 @@
                 </h1>
                 <div class="nav_nav">
                     <ul class="clearfix">
-                        <li><a href="##" class="leftbtn active">精选课程</a></li>
-                        <li><a href="##" class="bl">精选博文</a></li>
-                        <li><a href="##" class="bl">实训案例</a></li>
-                        <li><a href="##" class="bl rightbtn">声学基础材料</a></li>
+                        <li><a href="javascript: void(0);" class="leftbtn active">精选课程</a></li>
+                        <li><a href="javascript: void(0);" class="bl">精选博文</a></li>
+                        <li><a href="javascript: void(0);" class="bl">实训案例</a></li>
+                        <li><a href="javascript: void(0);" class="bl rightbtn">声学基础材料</a></li>
                     </ul>
                 </div>
                 <ul class="tabbox clearfix">
