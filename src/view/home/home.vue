@@ -50,25 +50,33 @@
     .foot_part1,
     .foot_part2,
     .foot_part3{width:28%;float:left;}
-    .foot_part4 {width:16%;float:left;text-align:right;}
-    .foot_part1 li,
-    .foot_part2 li,
-    .foot_part3 li,
-    .foot_part4 li {float:left;width:100%;margin-bottom:40px;}
-    .foot_part1 li a,
-    .foot_part2 li a,
-    .foot_part3 li a,
-    .foot_part4 li a {text-decoration:none;color:#C4C8CB;}
-    .foot_part1 li a:hover,
-    .foot_part2 li a:hover,
-    .foot_part3 li a:hover,
-    .foot_part4 li a:hover {text-decoration:underline;color:#C4C8CB;}
+    .foot_part4 {width:16%; float:left; text-align: left;}
+    .foot_part1 dt,
+    .foot_part2 dt,
+    .foot_part3 dt,
+    .foot_part4 dt {
+        font-size: 20px;
+        color: #C4C8CB;
+        padding-bottom: 40px;
+    }
+    .foot_part1 dd,
+    .foot_part2 dd,
+    .foot_part3 dd,
+    .foot_part4 dd {float:left;width:100%;margin-bottom:40px;}
+    .foot_part1 dd a,
+    .foot_part2 dd a,
+    .foot_part3 dd a,
+    .foot_part4 dd a {text-decoration:none;color:#C4C8CB;}
+    .foot_part1 dd a:hover,
+    .foot_part2 dd a:hover,
+    .foot_part3 dd a:hover,
+    .foot_part4 dd a:hover {text-decoration:underline;color:#C4C8CB;}
     .bottom {position:absolute;width:100%;height:161px;background:rgba(0,0,0,0.5);bottom:0;left:0;}
     .bottomcontent {width:1200px;position:absolute;left:50%;top:0;margin-left:-600px;}
     .bottomtext {float:right;text-align:left;margin-bottom:50px;}
-    .bottomtext li {float:left;margin:30px 15px 0 15px;}
-    .bottomtext li a {text-decoration:none;color:#C4C8CB;}
-    .bottomtext li a:hover {text-decoration:underline;color:#C4C8CB;}
+    .bottomtext dd {float:left;margin:30px 15px 0 15px;}
+    .bottomtext dd a {text-decoration:none;color:#C4C8CB;}
+    .bottomtext dd a:hover {text-decoration:underline;color:#C4C8CB;}
     .bottomicp {color:#C4C8CB;}
     .bottomicp p {margin:5px 0;}
 </style>
@@ -79,14 +87,14 @@
         <div class="contentbox">
             <div class="part1">
                 <h1 class="comtitle">
-                    <span>产品类型</span>
+                    <span>精选分类</span>
                 </h1>
                 <div class="nav_nav">
                     <ul class="clearfix">
-                        <li><a href="javascript: void(0);" class="leftbtn active">精选课程</a></li>
-                        <li><a href="javascript: void(0);" class="bl">精选博文</a></li>
-                        <li><a href="javascript: void(0);" class="bl">实训案例</a></li>
-                        <li><a href="javascript: void(0);" class="bl rightbtn">声学基础材料</a></li>
+                        <li><a href="javascript: void(0);" class="leftbtn active">服务范围</a></li>
+                        <li><a href="javascript: void(0);" class="bl">产品推荐</a></li>
+                        <li><a href="javascript: void(0);" class="bl">客户案例</a></li>
+                        <li><a href="javascript: void(0);" class="bl rightbtn">关于我们</a></li>
                     </ul>
                 </div>
                 <ul class="tabbox clearfix">
@@ -94,7 +102,7 @@
                         <a href="###">
                             <img src="../../assets/images/Img1.png" alt="javascript"/>
                             <span class="tabtext">
-                                javaScript入门篇
+                                吸音板
                             </span>
                         </a>
                     </li>
@@ -102,7 +110,7 @@
                         <a href="###">
                             <img src="../../assets/images/Img2.png" alt="ps"/>
                             <span class="tabtext">
-                                PS大神通关教程
+                                吸音棉
                             </span>
                         </a>
                     </li>
@@ -110,7 +118,7 @@
                         <a href="###">
                             <img src="../../assets/images/Img3.png" alt="java"/>
                             <span class="tabtext">
-                                JAVA入门第一季
+                                隔音毡
                             </span>
                         </a>
                     </li>
@@ -118,7 +126,15 @@
                         <a href="###">
                             <img src="../../assets/images/Img4.png" alt="python"/>
                             <span class="tabtext">
-                                python错误与异常
+                                软包
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img src="../../assets/images/Img4.png" alt="python"/>
+                            <span class="tabtext">
+                                硬包
                             </span>
                         </a>
                     </li>
@@ -126,7 +142,7 @@
                         <a href="###">
                             <img src="../../assets/images/Img5.png" alt="css3"/>
                             <span class="tabtext">
-                                十天精通CSS3
+                                植绒印花板
                             </span>
                         </a>
                     </li>
@@ -134,7 +150,7 @@
                         <a href="###">
                             <img src="../../assets/images/Img6.png" alt="bootstrap"/>
                             <span class="tabtext">
-                                玩转Bootstrap(基础)
+                                吸引体
                             </span>
                         </a>
                     </li>
@@ -142,15 +158,7 @@
                         <a href="###">
                             <img src="../../assets/images/Img7.png" alt="jq"/>
                             <span class="tabtext">
-                                jQ基础教程
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <img src="../../assets/images/Img8.png" alt="html"/>
-                            <span class="tabtext">
-                                网页布局基础
+                                烫金板
                             </span>
                         </a>
                     </li>
@@ -292,62 +300,62 @@
             </div>
             <div class="part6">
                 <div class="footerbox clearfix">
-                    <ul class="foot_part1">
-                        <li>
-                            <a href="###">新手入门</a>
-                        </li>
-                        <li>
-                            <a href="###">关于比特工厂(bitworks.cn)</a>
-                        </li>
-                        <li>
-                            <a href="###">新用户注册</a>
-                        </li>
-                    </ul>
-                    <ul class="foot_part2">
-                        <li>
-                            <a href="###">报名指南</a>
-                        </li>
-                        <li>
-                            <a href="###">实训课程</a>
-                        </li>
-                        <li>
-                            <a href="###">课程特点</a>
-                        </li>
-                    </ul>
-                    <ul class="foot_part3">
-                        <li>
-                            <a href="###">比特工厂(bitworks.cn)推荐</a>
-                        </li>
-                        <li>
-                            <a href="###">团体学习社区</a>
-                        </li>
-                        <li>
-                            <a href="###">项目实训营</a>
-                        </li>
-                    </ul>
-                    <ul class="foot_part4">
-                        <li>
-                            <a href="###">个人中心</a>
-                        </li>
-                        <li>
-                            <a href="###">学习中心</a>
-                        </li>
-                        <li>
-                            <a href="###">找回密码</a>
-                        </li>
-                        <li>
-                            <a href="###">意见与投诉</a>
-                        </li>
-                    </ul>
+                    <dl class="foot_part1">
+                        <dt>关于公司</dt>
+                        <dd>
+                            <a href="###">关于腾达</a>
+                        </dd>
+                        <dd>
+                            <a href="###">业务范围</a>
+                        </dd>
+                        <dd>
+                            <a href="###">联系我们</a>
+                        </dd>
+                        <dd>
+                            <a href="###">用户留言</a>
+                        </dd>
+                    </dl>
+                    <dl class="foot_part2">
+                        <dt>产品中心</dt>
+                        <dd>
+                            <a href="###">吸音板</a>
+                        </dd>
+                        <dd>
+                            <a href="###">吸音棉</a>
+                        </dd>
+                        <dd>
+                            <a href="###">软包</a>
+                        </dd>
+                        <dd>
+                            <a href="###">硬包</a>
+                        </dd>
+                    </dl>
+                    <dl class="foot_part3">
+                        <dt>新闻中心</dt>
+                        <dd>
+                            <a href="###">企业新闻</a>
+                        </dd>
+                        <dd>
+                            <a href="###">行业新闻</a>
+                        </dd>
+                        <dd>
+                            <a href="###">吸音知识</a>
+                        </dd>
+                    </dl>
+                    <dl class="foot_part4">
+                        <dt>关注我们</dt>
+                        <dd>24小时免费热线</dd>
+                        <dd>0512-66155787</dd>
+                    </dl>
                 </div>
                 <div class="bottom">
                     <div class="bottomcontent">
-                        <ul class="bottomtext">
-                            <li><a href="###">问题与反馈</a></li>
-                            <li><a href="###">联系我们</a></li>
-                            <li><a href="###">版权声明</a></li>
-                            <li><a href="###">关于比特工厂</a></li>
-                        </ul>
+                        <dl class="bottomtext">
+                            <dd><a href="###">问题与反馈</a></dd>
+                            <dd><a href="###">联系我们</a></dd>
+                            <dd><a href="###">版权声明</a></dd>
+                            <dd><a href="###">关于比特工厂</a></dd>
+                        </dl>
                         <div class="bottomicp cb">
                             <p>Copyright&nbsp;2015 www.bitworks.cn&nbsp;版权所有：武汉尚伟教育科技有限公司</p>
                             <p>所有教程、视频除特别声明外，均为原创作品，谢绝任何形式的转载、引用和其他商业用途&nbsp;鄂ICP备&nbsp;13003952号-3</p>

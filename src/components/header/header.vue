@@ -14,10 +14,15 @@
             padding: 0 15px;
             .header_logo {
                 float: left;
-                width: 250px;
                 text-align: left;
+                width: 200px;
+                margin: 0 15px;
                 padding: 13px 0;
                 vertical-align: middle;
+                .vm-logo {
+                    display: block;
+                    height: 50px;
+                }
             }
             .navbox {
                 float: left;
@@ -28,20 +33,24 @@
                         font-size: 14px;
                         display: block;
                         padding: 0 22px;
-                        line-height: 60px;
+                        line-height: 72px;
                         text-align: center;
                         color: #93989C;
                         background-color: transparent;
                         text-decoration: none;
                         transition: all 0.3s linear;
                         -webkit-transition: all 0.3s linear;
+                        position: relative;
+                        border-bottom: 4px solid transparent;
                         &:hover {
                             background-color: #373C42;
                             color: $white;
+                            border-color: $global_color;
                         }
                         &.router-link-active {
                             background-color: #373C42;
                             color: $white;
+                            border-color: $global_color;
                         }
                     }
                 }
@@ -55,7 +64,7 @@
                     vertical-align: middle;
                     padding: 6px 45px 6px 12px;
                     color: #93989C;
-                    margin: 13px 10px;
+                    margin: 20px 10px;
                     background: #373C42 url(../../assets/images/search.png) no-repeat 221px center;
                     border: 1px solid #373C42;
                     transition: all 0.3s ease-in-out;
@@ -73,11 +82,11 @@
     <header class="headerbox">
         <div class="header clearfix">
             <div class="header_logo">
-                <a href="javascript: void(0);"><img src="../../assets/images/logo.png" alt="logo" class="vm" /></a>
+                <a href="javascript: void(0);"><img src="../../assets/images/logo.png" alt="logo" class="vm-logo" /></a>
             </div>
             <div class="navbox">
                 <ul class="fl">
-                    <li v-if="!item.hidden" v-for="(item, index) in routerList" :key="index">
+                    <li v-if="!item.hidden" @mouseenter="handleEnter" @mouseleave="handleLeave" @click="handleClick" v-for="(item, index) in routerList" :key="index">
                         <router-link tag="a" :to="`/${item.path}`">{{item.meta.title}}</router-link>
                     </li>
                 </ul>
