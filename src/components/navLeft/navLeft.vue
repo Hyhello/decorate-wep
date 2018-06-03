@@ -10,32 +10,49 @@
         top: 0;
         left: 0;
         transition: transform 0.5s;
-        li a {
-            display: block;
-            width: 178px;
+        background-color: #FFFFFF;
+        border: 1px solid #EDEDED;
+        dt {
+            padding: 0 15px;
             height: 50px;
-            line-height: 50px;
+            line-height: 45px;
+            text-align: center;
+            background-color: #01C2BD;
+            color: #FFFFFF;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-shadow: 0 0px hsl(0, 0%,80%),
+            0 1px hsl(0, 0%, 75%),
+            0 2px hsl(0, 0%, 70%),
+            0 3px hsl(0, 0%, 65%),
+            0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        dd a {
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
             background-color: #FFF;
             text-decoration: none;
-            color: #000;
-            border: 1px solid #EDEDED;
-            margin: -1px 0 0 0;
+            color: #767676;
+            margin-bottom: 10px;
             &.router-link-active,
             &:hover {
-                background-color: #01C2BD;
-                color: #FFF;
-                border-color: #01C2BD;
+                background-color: #ECF0F1;
+                color: #01C2BD;
+                border-color: #ECF0F1;
             }
         }
     }
 </style>
 <template>
-    <ul class="query_nav">
-        <li v-if="item.meta.desciption" v-for="(item, index) in routerList" :key="index">
+    <dl class="query_nav">
+        <dt>关于我们</dt>
+        <dd v-if="item.meta.desciption" v-for="(item, index) in routerList" :key="index">
             <router-link :to="`/${item.path}`" tag="a">{{item.meta.title}}</router-link>
-        </li>
-    </ul>
+        </dd>
+    </dl>
 </template>
 <script>
     import { addStyle, debounce, getDom } from '@/libs/utils';
