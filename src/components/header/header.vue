@@ -86,7 +86,7 @@
             </div>
             <div class="navbox">
                 <ul class="fl">
-                    <li v-if="!item.hidden" @mouseenter="handleEnter" @mouseleave="handleLeave" @click="handleClick" v-for="(item, index) in routerList" :key="index">
+                    <li v-if="!item.hidden" v-for="(item, index) in routerList" :key="index">
                         <router-link tag="a" :to="`/${item.path}`">{{item.meta.title}}</router-link>
                     </li>
                 </ul>
