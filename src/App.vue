@@ -12,7 +12,7 @@
 <template>
     <div class="main-panel">
         <hy-header></hy-header>
-        <template v-if="$route.meta.desciption">
+        <template v-if="!$route.meta.desciption">
             <hy-banner></hy-banner>
             <content-tpl>
                 <nav-left slot="left"></nav-left>
