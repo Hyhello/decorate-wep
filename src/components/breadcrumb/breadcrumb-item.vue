@@ -25,12 +25,15 @@
             font-weight: 700;
             color: #c0c4cc;
         }
+        &:last-child .breadcrumb-item__separator {
+            display: none;
+        }
     }
 </style>
 <template>
     <span class="breadcrumb-item__panel">
         <router-link class="breadcrumb-item__inner" :class="{'is-link': !!this.to}" :tag="linkTag" :to="to"><slot></slot></router-link>
-        <span class="breadcrumb-item__separator" v-show="separatorShow">{{separator}}</span>
+        <span class="breadcrumb-item__separator">{{separator}}</span>
     </span>
 </template>
 <script>
@@ -58,15 +61,8 @@
         },
         mounted () {
             this.updateSeparator();
-            this.separatorShow = this !== this.findPLastChild();
         },
         methods: {
-            findPLastChild () {
-                if (this.hasParent) {
-                    return this.$parent.findChild().slice(-1)[0];
-                }
-                return null;
-            },
             updateSeparator () {
                 if (this.hasParent) {
                     this.separator = this.$parent.separator;

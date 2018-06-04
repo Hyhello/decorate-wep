@@ -16,11 +16,6 @@
             default: '/'
         }
     },
-    methods: {
-        findChild () {
-            return this.$children.filter(item => item.$options.name === 'BreadcrumbItem');
-        }
-    },
     render (h) {
         return h(this.tag, {
             'class': [
