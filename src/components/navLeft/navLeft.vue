@@ -48,9 +48,9 @@
 </style>
 <template>
     <dl class="query_nav">
-        <dt>关于我们</dt>
-        <dd v-if="item.meta.desciption" v-for="(item, index) in routerList" :key="index">
-            <router-link :to="`/${item.path}`" tag="a">{{item.meta.title}}</router-link>
+        <dt>{{routerList[0].meta.title}}</dt>
+        <dd v-if="!item.meta.desciption" v-for="(item, index) in routerList[0].children" :key="index">
+            <router-link :to="item.path" tag="a">{{item.meta.title}}</router-link>
         </dd>
     </dl>
 </template>
@@ -65,7 +65,14 @@
         },
         computed: {
             routerList () {
-                return this.$router.options.routes[0].children;
+                let routes = [];
+                this.$router.options.routes.forEach(item => {
+                    if (!item.hidden && new RegExp(item.path, 'i').exec(this.$route.path)) {
+                        routes.push(item);
+                    }
+                });
+                console.log(routes);
+                return routes;
             }
         },
         mounted () {

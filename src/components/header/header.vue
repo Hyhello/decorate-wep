@@ -87,7 +87,7 @@
             <div class="navbox">
                 <ul class="fl">
                     <li v-if="!item.hidden" v-for="(item, index) in routerList" :key="index">
-                        <router-link tag="a" :to="`/${item.path}`">{{item.meta.title}}</router-link>
+                        <router-link tag="a" :to="item.path">{{item.meta.title}}</router-link>
                     </li>
                 </ul>
             </div>
@@ -102,7 +102,7 @@
         name: 'hyHeader',
         computed: {
             routerList () {
-                return this.$router.options.routes[0].children;
+                return this.$router.options.routes;
             }
         }
     };
