@@ -58,16 +58,6 @@
             hasParent () {
                 return this.$parent.$options.name === 'Breadcrumb';
             }
-        },
-        mounted () {
-            this.updateSeparator();
-        },
-        methods: {
-            updateSeparator () {
-                if (this.hasParent) {
-                    this.separator = this.$parent.separator;
-                }
-            }
         }
     };
 </script>

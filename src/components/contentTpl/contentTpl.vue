@@ -64,15 +64,11 @@
             </div>
             <div class="query_right">
                 <breadcrumb tag="h2" class="query_title">
-                    <breadcrumb-item to="/home">首页</breadcrumb-item>
-                    <!-- <transition-group name="breadcrumb">
-                        <breadcrumb-item v-if="$route.fullPath === `${item.path}`" v-for="item in routerList" :key="item.path">
-                            {{$route.meta.title}}
+                    <transition-group name="breadcrumb">
+                        <breadcrumb-item v-if="item.meta.title" :to="item.path" v-for="item in routerList" :key="item.path">
+                            {{item.meta.title}}
                         </breadcrumb-item>
-                    </transition-group> -->
-                    <breadcrumb-item to="/home">张三</breadcrumb-item>
-                    <breadcrumb-item to="/home">张三</breadcrumb-item>
-                    <breadcrumb-item to="/home">张三</breadcrumb-item>
+                    </transition-group>
                 </breadcrumb>
                 <div class="right_content">
                     <slot name="right"></slot>
@@ -101,12 +97,8 @@
                 }
                 return {};
             },
-            matchList () {
-                console.log(this.$route.match);
-                return [];
-            },
             routerList () {
-                return this.$router.options.routes;
+                return [{meta: {title: '首页'}, path: '/home'}].concat(this.$route.matched);
             }
         },
         mounted () {

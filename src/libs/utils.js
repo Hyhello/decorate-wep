@@ -172,6 +172,3 @@ export const toNumber = (val) => {
                 ? val
                 : n;
 };
-
-// 嵌套拆分为数组  [{name: 'a', children: []}] => [{name: 'a'}, {children}]
-export const splitToArray = () => {};
