@@ -58,6 +58,29 @@
             hasParent () {
                 return this.$parent.$options.name === 'Breadcrumb';
             }
+        },
+        mounted () {
+            this.updateSeparator();
+        },
+        methods: {
+            updateSeparator () {
+                this.findParent('Breadcrumb', (item) => {
+                    this.separator = item.separator;
+                });
+            },
+            findParent (name, cb) {
+                const find = (parent) => {
+                    const bool = parent.$options.name === name;
+                    if (bool) {
+                        cb(parent);
+                    } else {
+                        find(parent.$parent);
+                    }
+                };
+                if (this.$parent) {
+                    find(this.$parent);
+                }
+            }
         }
     };
 </script>

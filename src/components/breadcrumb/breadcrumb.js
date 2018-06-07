@@ -16,9 +16,6 @@
             default: '/'
         }
     },
-    mounted () {
-        this.updateChildSeparator();
-    },
     watch: {
         separator () {
             this.updateChildSeparator();
