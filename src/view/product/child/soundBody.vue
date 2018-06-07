@@ -1,7 +1,7 @@
 /**
  * 作者：yeshengqiang
  * 时间：2018-06-07
- * 描述：隔音板
+ * 描述：吸音体
  */
 <style lang="scss" scoped>
 

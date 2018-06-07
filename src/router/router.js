@@ -53,17 +53,17 @@ export default [
     },
     {
         path: '/product',
-        redirect: '/product/soundInsulation',
+        redirect: '/product/soundBoard',
         component: _import('product/product'),
         meta: {
             title: '产品中心'
         },
         children: [
             {
-                path: 'soundInsulation',
-                component: _import('product/child/soundInsulation'),
+                path: 'soundBoard',
+                component: _import('product/child/soundBoard'),
                 meta: {
-                    title: '隔音板'
+                    title: '吸音板'
                 }
             },
             {
@@ -72,8 +72,50 @@ export default [
                 meta: {
                     title: '吸音棉'
                 }
+            },
+            {
+                path: 'soundBlanket',
+                component: _import('product/child/soundBlanket'),
+                meta: {
+                    title: '隔音毡'
+                }
+            },
+            {
+                path: 'softPackage',
+                component: _import('product/child/softPackage'),
+                meta: {
+                    title: '软包'
+                }
+            },
+            {
+                path: 'hardPackage',
+                component: _import('product/child/hardPackage'),
+                meta: {
+                    title: '硬包'
+                }
+            },
+            {
+                path: 'flockBoard',
+                component: _import('product/child/flockBoard'),
+                meta: {
+                    title: '植绒印花板'
+                }
+            },
+            {
+                path: 'hotPlate',
+                component: _import('product/child/hotPlate'),
+                meta: {
+                    title: '烫金体'
+                }
             }
         ]
+    },
+    {
+        path: '/customerCase',
+        component: _import('customerCase/customerCase'),
+        meta: {
+            title: '客户案例'
+        }
     },
     {
         path: '/news',
