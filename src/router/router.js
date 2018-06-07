@@ -32,7 +32,7 @@ export default [
                 path: 'aboutUs',
                 component: _import('about/child/aboutUs'),
                 meta: {
-                    title: '关于腾达'
+                    title: '关于我们'
                 }
             },
             {
@@ -53,7 +53,7 @@ export default [
     },
     {
         path: '/product',
-        redirect: '/product/',
+        // redirect: '/product/',
         component: _import('product/product'),
         meta: {
             title: '产品中心'

@@ -65,13 +65,8 @@
         },
         computed: {
             routerList () {
-                let routes = [];
-                this.$router.options.routes.forEach(item => {
-                    if (!item.hidden && new RegExp(item.path, 'i').exec(this.$route.path)) {
-                        routes.push(item);
-                    }
-                });
-                console.log(routes);
+                const matched = this.$route.matched[0];
+                let routes = this.$router.options.routes.filter(item => item.path === matched.path);
                 return routes;
             }
         },
