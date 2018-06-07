@@ -47,39 +47,16 @@
         },
         data () {
             return {
-                separatorShow: true,
-                separator: ''
+                separatorShow: true
             };
         },
+        inject: [ 'Breadcrumb' ],
         computed: {
+            separator () {
+                return this.Breadcrumb.separator;
+            },
             linkTag () {
                 return this.to ? 'a' : 'span';
-            },
-            hasParent () {
-                return this.$parent.$options.name === 'Breadcrumb';
-            }
-        },
-        mounted () {
-            this.updateSeparator();
-        },
-        methods: {
-            updateSeparator () {
-                this.findParent('Breadcrumb', (item) => {
-                    this.separator = item.separator;
-                });
-            },
-            findParent (name, cb) {
-                const find = (parent) => {
-                    const bool = parent.$options.name === name;
-                    if (bool) {
-                        cb(parent);
-                    } else {
-                        find(parent.$parent);
-                    }
-                };
-                if (this.$parent) {
-                    find(this.$parent);
-                }
             }
         }
     };

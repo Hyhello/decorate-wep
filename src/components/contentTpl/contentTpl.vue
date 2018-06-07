@@ -43,17 +43,20 @@
             }
         }
     }
+    /*fade*/
     .breadcrumb-enter-active,
     .breadcrumb-leave-active {
         transition: all .5s;
-        display: inline-block;
-        position: absolute;
     }
 
     .breadcrumb-enter,
     .breadcrumb-leave-active {
         opacity: 0;
-        transform: translateX(20px);
+        transform: translate(20px, 0);
+    }
+
+    .breadcrumb-leave-active {
+        position: absolute;
     }
 </style>
 <template>
