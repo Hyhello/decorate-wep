@@ -36,6 +36,13 @@ export default [
                 }
             },
             {
+                path: 'business',
+                component: _import('about/child/business'),
+                meta: {
+                    title: '业务介绍'
+                }
+            },
+            {
                 path: 'contactUs',
                 component: _import('about/child/contactUs'),
                 meta: {
@@ -120,9 +127,40 @@ export default [
     {
         path: '/news',
         component: _import('news/news'),
+        redirect: '/news/enterprise',
         meta: {
             title: '新闻中心'
-        }
+        },
+        children: [
+            {
+                path: 'enterprise',
+                component: _import('news/child/enterprise'),
+                meta: {
+                    title: '企业新闻'
+                }
+            },
+            {
+                path: 'industry',
+                component: _import('news/child/industry'),
+                meta: {
+                    title: '行业新闻'
+                }
+            },
+            {
+                path: 'evaluation',
+                component: _import('news/child/evaluation'),
+                meta: {
+                    title: '客户评价'
+                }
+            },
+            {
+                path: 'soundknowledge',
+                component: _import('news/child/soundknowledge'),
+                meta: {
+                    title: '吸音知识'
+                }
+            }
+        ]
     },
     // {
     //     path: 'customerCase',
@@ -133,10 +171,34 @@ export default [
     // },
     {
         path: '/technicalSupport',
+        redirect: '/technicalSupport/afterService',
         component: _import('technicalSupport/technicalSupport'),
         meta: {
             title: '技术支持'
-        }
+        },
+        children: [
+            {
+                path: 'afterService',
+                component: _import('technicalSupport/child/afterService'),
+                meta: {
+                    title: '售后服务'
+                }
+            },
+            {
+                path: 'installMethod',
+                component: _import('technicalSupport/child/installMethod'),
+                meta: {
+                    title: '安装方法'
+                }
+            },
+            {
+                path: 'commonProblem',
+                component: _import('technicalSupport/child/commonProblem'),
+                meta: {
+                    title: '常见问题'
+                }
+            }
+        ]
     },
     {
         path: '/text',
