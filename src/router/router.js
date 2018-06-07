@@ -53,7 +53,7 @@ export default [
     },
     {
         path: '/product',
-        // redirect: '/product/',
+        redirect: '/product/soundInsulation',
         component: _import('product/product'),
         meta: {
             title: '产品中心'
