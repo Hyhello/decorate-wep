@@ -13,3 +13,8 @@
         clear: both;
     }
  }
+
+ @mixin wh ($width, $height) {
+    width: $width;
+    height: $height;
+ }

@@ -4,10 +4,9 @@
  * 描述：app入口
  */
 <style lang="scss">
-  @import 'normalize.css';
-  @import 'src/scss/common';
-  @import 'src/scss/animate';
-
+    @import 'normalize.css';
+    @import 'src/scss/common';
+    @import 'src/scss/animate';
 </style>
 <template>
     <div class="main-panel">
