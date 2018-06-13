@@ -205,7 +205,8 @@ export default [
         component: _import('text'),
         hidden: true,
         meta: {
-            title: '测试页面'
+            title: '测试页面',
+            desciption: true
         }
     },
     {
@@ -213,7 +214,8 @@ export default [
         component: _import('comText'),
         hidden: true,
         meta: {
-            title: '组件测试页面'
+            title: '组件测试页面',
+            desciption: true
         }
     }
 ];

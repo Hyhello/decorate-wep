@@ -4,14 +4,13 @@
  * 描述：吸音音板
  */
 <style lang="scss" scoped>
+    @import 'src/scss/vars';
     @import 'src/scss/mixins';
     $width: 100% / 3;
 
     .carousel-panel {
         @include clearfix;
         box-sizing: border-box;
-        padding-bottom: 50px;
-        border-bottom: 1px solid #cccccc;
         .carousel-item {
             float: left;
             padding: 10px;
@@ -21,10 +20,22 @@
                 border-radius: 5px;
                 box-shadow: 0 0 5px #cccccc;
                 overflow: hidden;
-                img {
-                    display: block;
-                    width: 100%;
-                    height: 200px;
+                .figure_img {
+                    position: relative;
+                    .tips__item {
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        padding: 6px 12px;
+                        color: $white;
+                        border-radius: 4px;
+                        background-color: rgba(0, 0, 0, 0.3);
+                    }
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 200px;
+                    }
                 }
                 .figcaption__panel {
                     text-align: center;
@@ -60,9 +71,28 @@
                 }
             }
         }
-        .pagination-panel {
-            padding-top: 30px;
-            border-top: 1px solid #cccccc;
+    }
+    .pagination-panel {
+        margin-top: 80px;
+        padding-top: 80px;
+        text-align: center;
+        border-top: 1px solid #e9e9e9;
+        .pagination-item {
+            display: inline-block;
+            vertical-align: middle;
+            border-right: 1px solid #e9e9e9;
+            .pagination-prev,
+            .pagination-next {
+                margin: 0 10px;
+                display: inline-block;
+                @include wh(45px, 45px);
+                font-size: 24px;
+                text-align: center;
+                line-height: 45px;
+                color: $white;
+                border-radius: 100%;
+                background-color: $global_color;
+            }
         }
     }
 </style>
@@ -71,7 +101,10 @@
         <ul class="carousel-panel">
             <li class="carousel-item" v-for="(item, index) in 9" :key="index">
                 <figure class="figure__panel">
-                    <img src="../../../assets/images/img1.png" />
+                    <div class="figure_img">
+                        <img src="../../../assets/images/img1.png" />
+                        <span class="tips__item">隔音板</span>
+                    </div>
                     <figcaption class="figcaption__panel">
                         <div class="figcaption__panel__inner fontSize20">
                             <svg-icon type="heart"></svg-icon>
@@ -90,10 +123,21 @@
             </li>
         </ul>
         <!-- 分页 -->
-        <div class="pagination-panel">
-            <a class="pagination-item">上一页</a>
-            <a class="pagination-item">下一页</a>
-        </div>
+        <!-- <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="1000">
+        </el-pagination> -->
+        <!-- <div class="pagination-panel">
+            <span class="pagination-item">
+                <a href="javascript: void(0);" class="pagination-prev"><svg-icon type="back"></svg-icon></a>
+                <a href="javascript: void(0);">上一页</a>
+            </span>
+            <a class="pagination-item">
+                <a href="javascript: void(0);">下一页</a>
+                <a href="javascript: void(0);" class="pagination-next"><svg-icon type="forward"></svg-icon></a>
+            </a>
+        </div> -->
     </div>
 </template>
 <script>
