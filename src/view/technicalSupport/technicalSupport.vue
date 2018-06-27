@@ -4,17 +4,23 @@
  * 描述：技术支持
  */
 <style lang="scss" scoped>
-
+    .fadeTo-enter-active, .fadeTo-leave-active {
+        transition: all .5s;
+        position: absolute;
+    }
+    .fadeTo-enter {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    .fadeTo-leave-to {
+        opacity: 0;
+        transform: translateX(40px);
+    }
 </style>
 <template>
-    <div>
-        ★凡选用润声吸音板系列产品的用户均可享免费技术指导服务和安装指导服务。我公司还实行对用户进行不定时回访，了解用户对产品的使用情况，以确保用户对产品保持正确的使用。
-        ★万一安装或施工失误，造成材料供应不足，厂方承诺以成本价为客户补足所差缺产品，我公司在接到用户的电话或传真件后，将在一个工作日内作出计划和及安排生产或发货。
-        ★如果我们没有做到，请直接投诉：13913587401 张小姐
+    <div class="container">
+        <transition name="fadeTo">
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
-<script>
-    export default {
-
-    };
-</script>

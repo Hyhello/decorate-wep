@@ -62,11 +62,6 @@
             return {
                 content: '史上墙施工介介绍墙施工介介绍 ...'
             };
-        },
-        mounted () {
-            setTimeout(() => {
-               this.content = '史上墙施工介介绍墙施工介介绍 ...官方提供了几十种动';
-            }, 3000);
         }
     };
 </script>
