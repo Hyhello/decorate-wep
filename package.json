@@ -15,12 +15,14 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.15.0",
     "element-ui": "^2.3.7",
     "normalize.css": "^8.0.0",
     "resize-observer-polyfill": "^1.5.0",
     "swiper": "^4.2.2",
     "velocity-animate": "^1.5.1",
     "vue": "^2.5.2",
+    "vue-amap": "^0.5.8",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "xtend": "^4.0.1"

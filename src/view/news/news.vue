@@ -46,22 +46,5 @@
     }
 </style>
 <template>
-    <ul class="container">
-        <li class="news-panel-item" v-for="(item, index) in 10" :data-index="index + 1" :key="index">
-            <router-link to="/home" v-animate-piano="content"></router-link>
-            <span class="news-item-time">2018-05-17</span>
-        </li>
-    </ul>
+    <router-view></router-view>
 </template>
-<script>
-    import { animatePiano } from '@/components';
-
-    export default {
-        components: { animatePiano },
-        data () {
-            return {
-                content: '史上墙施工介介绍墙施工介介绍 ...'
-            };
-        }
-    };
-</script>

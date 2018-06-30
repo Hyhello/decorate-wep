@@ -10,6 +10,8 @@ import waves from '@/directives/waves';
 import animateLine from '@/directives/animateLine';
 import animatePiano from '@/directives/animatePiano';
 import 'element-ui/lib/theme-chalk/index.css';
+// 采用mock数据
+import '@/mock';
 
 Vue.config.productionTip = false;
 

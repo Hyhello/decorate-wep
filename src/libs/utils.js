@@ -172,3 +172,11 @@ export const toNumber = (val) => {
                 ? val
                 : n;
 };
+
+// 格式化api
+export const apiFormat = (str, res) => {
+    let reg = /\{(\w+?)\}/gi;
+    return str.replace(reg, ($0, $1) => {
+        return res[$1];
+    });
+};
