@@ -7,6 +7,7 @@ import store from './store';
 import svgIcon from './icons';
 import ElementUI from 'element-ui';
 import waves from '@/directives/waves';
+import Loading from '@/directives/loading';
 import animateLine from '@/directives/animateLine';
 import animatePiano from '@/directives/animatePiano';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -18,6 +19,7 @@ Vue.config.productionTip = false;
 Vue.use(waves);
 Vue.use(svgIcon);
 Vue.use(ElementUI);
+Vue.use(Loading);
 Vue.use(animateLine);
 Vue.use(animatePiano);
 

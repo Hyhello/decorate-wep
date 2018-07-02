@@ -5,7 +5,6 @@
  */
 <style lang="scss" scoped>
     @import 'src/scss/vars';
-
     .news-panel-item {
         font-size: 14px;
         height: 30px;
@@ -46,7 +45,7 @@
     }
 </style>
 <template>
-    <ul class="container">
+    <ul class="container" v-loading="loading" :loading-text="loadingText">
         <li class="news-panel-item" v-for="(item, index) in list" :data-index="index + 1" :key="index">
             <router-link to="/home" v-animate-piano="item.title"></router-link>
             <span class="news-item-time">{{item.releaseTime}}</span>
@@ -61,6 +60,8 @@
         components: { animatePiano },
         data () {
             return {
+                loading: true,
+                loadingText: '加载中',
                 list: []
             };
         },
@@ -70,6 +71,7 @@
         methods: {
             async _getList () {
                 const result = await getKnowledgeList();
+                this.loading = false;
                 this.list = result.data;
             }
         }
