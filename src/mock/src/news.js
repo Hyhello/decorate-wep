@@ -5,16 +5,29 @@
  */
 
  import { mockApi } from '../config.js';
- import * as data from '../data/news.json';
+ import * as soundknowledge from '../data/soundknowledge.json';
+ import * as evaluation from '../data/evaluation.json';
 
  mockApi.onGet('/api/news/knowledge/list').reply(args => {
      return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve([200, {
                 code: 0,
-                data,
+                data: soundknowledge,
                 message: 'ok'
             }]);
         }, 1000);
      });
  });
+
+ mockApi.onGet('/api/news/evaluation/list').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: evaluation,
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});

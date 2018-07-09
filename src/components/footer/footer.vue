@@ -49,10 +49,10 @@
     <div class="footbox">
         <div class="footer">
             <ul class="footertext clearfix">
-                <li><a href="###">问题与反馈</a></li>
+                <li><a href="###">产品中心</a></li>
                 <li><a href="###">联系我们</a></li>
                 <li><a href="###">版权声明</a></li>
-                <li><a href="###">关于比特工厂</a></li>
+                <li><a href="###">关于叶斌腾达</a></li>
             </ul>
             <div class="texticp">
                 <p>Copyright&nbsp;2015 www.bitworks.cn&nbsp;版权所有：武汉尚伟教育科技有限公司</p>
