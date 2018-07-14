@@ -102,7 +102,7 @@
             <li class="carousel-item" v-for="(item, index) in 9" :key="index">
                 <figure class="figure__panel">
                     <div class="figure_img">
-                        <img src="../../../assets/images/img1.png" />
+                        <img :src="`/static/images/xyb${index+1}.jpg`" />
                         <span class="tips__item">隔音板</span>
                     </div>
                     <figcaption class="figcaption__panel">
