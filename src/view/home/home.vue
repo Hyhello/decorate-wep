@@ -100,7 +100,7 @@
                 <ul class="tabbox clearfix">
                     <li style="margin-left:0;">
                         <a href="###">
-                            <img src="../../assets/images/Img1.png" alt="javascript"/>
+                            <img src="/static/images/xyb1.jpg" alt="javascript"/>
                             <span class="tabtext">
                                 吸音板
                             </span>
@@ -108,7 +108,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/images/Img2.png" alt="ps"/>
+                            <img src="/static/images/xym1.jpg" alt="ps"/>
                             <span class="tabtext">
                                 吸音棉
                             </span>
@@ -116,7 +116,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/images/Img3.png" alt="java"/>
+                            <img src="/static/images/gyz1.jpg" alt="java"/>
                             <span class="tabtext">
                                 隔音毡
                             </span>
@@ -124,7 +124,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/images/Img4.png" alt="python"/>
+                            <img src="/static/images/rb1.jpg" alt="python"/>
                             <span class="tabtext">
                                 软包
                             </span>
@@ -132,7 +132,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/images/Img4.png" alt="python"/>
+                            <img src="/static/images/yb1.jpg" alt="python"/>
                             <span class="tabtext">
                                 硬包
                             </span>
@@ -140,7 +140,7 @@
                     </li>
                     <li style="margin-left:0;">
                         <a href="###">
-                            <img src="../../assets/images/Img5.png" alt="css3"/>
+                            <img src="/static/images/mryhb1.jpg" alt="css3"/>
                             <span class="tabtext">
                                 植绒印花板
                             </span>
@@ -148,7 +148,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/images/Img6.png" alt="bootstrap"/>
+                            <img src="/static/images/xyb2.jpg" alt="bootstrap"/>
                             <span class="tabtext">
                                 吸引体
                             </span>
@@ -156,7 +156,7 @@
                     </li>
                     <li>
                         <a href="###">
-                            <img src="../../assets/images/Img7.png" alt="jq"/>
+                            <img src="/static/images/tjb1.jpg" alt="jq"/>
                             <span class="tabtext">
                                 烫金板
                             </span>
@@ -164,7 +164,7 @@
                     </li>
                 </ul>
                 <div class="part1_more">
-                    <a href="./query.html">查看更多课程</a>
+                    <a href="./query.html">查看更多产品</a>
                 </div>
             </div>
             <div class="part2">
