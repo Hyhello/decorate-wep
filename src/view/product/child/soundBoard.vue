@@ -103,7 +103,7 @@
                 <figure class="figure__panel">
                     <div class="figure_img">
                         <img :src="`/static/images/xyb${index+1}.jpg`" />
-                        <span class="tips__item">隔音板</span>
+                        <span class="tips__item">吸音板</span>
                     </div>
                     <figcaption class="figcaption__panel">
                         <div class="figcaption__panel__inner fontSize20">
