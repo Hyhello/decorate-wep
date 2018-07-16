@@ -4,7 +4,79 @@
  * 描述：home 首页
  */
 <style lang="scss" scoped>
-    .contentbox {width:100%;min-width:1200px;_width:1200px;background:#FFF;}
+    @import 'src/scss/mixins';
+
+    .contentbox {
+        width: 100%;
+        min-width: 1200px;
+        _width: 1200px;
+        background-color: #FFF;
+        .home-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #ffffff;
+            margin-bottom: 60px;
+            .home-title-tips {
+                margin-top: 5px;
+                font-size: 12px;
+                font-weight: normal;
+                font-style: italic;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                color: #777777;
+            }
+        }
+        .message-panel {
+            padding: 100px 0;
+            background: url('../../assets/images/msg_bg.png') no-repeat center center;
+            background-size: 100%;
+            text-align: center;
+            .el_col-item {
+                margin-bottom: 20px;
+            }
+            .mes-btn {
+                background-color: #01C2BD;
+                padding: 0;
+                width: 160px;
+                height: 50px;
+                line-height: 50px;
+            }
+        }
+        .tips-panel {
+            width: 100%;
+            background-color: #FAFAFA;
+            position: relative;
+            text-align: center;
+            .tips-list-panel {
+                padding: 40px 0;
+                display: inline-block;
+                @include clearfix;
+                .tips-list-item {
+                    float: left;
+                    font-size: 70px;
+                    text-align: center;
+                    width: 350px;
+                    // padding: 0 100px;
+                    .tips-list-text {
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        letter-spacing: 0px;
+                        color: #808c95;
+                    }
+                }
+            }
+            .tips-icon {
+                position: absolute;
+                top: -2px;
+                left: 50%;
+                font-size: 45px;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
     .part1 {width:1198px;margin:0 auto;}
     .comtitle {text-align:center;margin-bottom:50px;letter-spacing:1px;}
     .comtitle span {display:inline-block;font-size:35px;color:#01C2BD;font-weight:500;width:200px;padding:70px 0 35px;border-bottom:1px solid #01C2BD;}
@@ -45,46 +117,38 @@
     .part4_line {width:100%;height:1px;background:#FFF;overflow:hidden;font-size:1px;zoom:1;position:absolute;left:0;bottom:105px;}
     .part5 {width:100%;text-align:center;background:#FFF;padding-bottom:80px;}
     .icon a{margin:5px;}
-    .part6 {width:100%;height:604px;background:url(../../assets/images/footer_bg.png) no-repeat center center;background-size:cover;position:relative;}
-    .footerbox {width:1200px;margin:0 auto;padding-top:80px;}
-    .foot_part1,
-    .foot_part2,
-    .foot_part3{width:28%;float:left;}
-    .foot_part4 {width:16%; float:left; text-align: left;}
-    .foot_part1 dt,
-    .foot_part2 dt,
-    .foot_part3 dt,
-    .foot_part4 dt {
-        font-size: 20px;
-        color: #C4C8CB;
-        padding-bottom: 40px;
+    .footer-panel {
+        width: 100%;
+        height: 280px;
+        background: #1f2830 url(../../assets/images/footer_bg.png) no-repeat top center;
+        background-size: 100% 100%;
+        position: relative;
+        .copyright {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #1f2830;
+            border-top: 1px solid #27323b;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #698295;
+            .copyright-font {
+                color: #e95f58;
+            }
+        }
     }
-    .foot_part1 dd,
-    .foot_part2 dd,
-    .foot_part3 dd,
-    .foot_part4 dd {float:left;width:100%;margin-bottom:40px;}
-    .foot_part1 dd a,
-    .foot_part2 dd a,
-    .foot_part3 dd a,
-    .foot_part4 dd a {text-decoration:none;color:#C4C8CB;}
-    .foot_part1 dd a:hover,
-    .foot_part2 dd a:hover,
-    .foot_part3 dd a:hover,
-    .foot_part4 dd a:hover {text-decoration:underline;color:#C4C8CB;}
-    .bottom {position:absolute;width:100%;height:161px;background:rgba(0,0,0,0.5);bottom:0;left:0;}
-    .bottomcontent {width:1200px;position:absolute;left:50%;top:0;margin-left:-600px;}
-    .bottomtext {float:right;text-align:left;margin-bottom:50px;}
-    .bottomtext dd {float:left;margin:30px 15px 0 15px;}
-    .bottomtext dd a {text-decoration:none;color:#C4C8CB;}
-    .bottomtext dd a:hover {text-decoration:underline;color:#C4C8CB;}
-    .bottomicp {color:#C4C8CB;}
-    .bottomicp p {margin:5px 0;}
 </style>
 <template>
     <div class="home-panel">
         <hy-swiper></hy-swiper>
         <!--content-->
-        <div class="contentbox">
+        <section class="contentbox">
             <div class="part1">
                 <h1 class="comtitle">
                     <span>精选分类</span>
@@ -284,92 +348,80 @@
                     <div class="part4_line"></div>
                 </div>
             </div>
-            <div class="part5">
-                <h1 class="comtitle">
-                    <span>云编译</span>
-                </h1>
-                <div>
-                    <img src="../../assets/images/content3_bg.png" />
-                </div>
-                <div class="icon">
-                    <a href="##"><img src="../../assets/images/icon1.png" /></a>
-                    <a href="##"><img src="../../assets/images/icon2.png" /></a>
-                    <a href="##"><img src="../../assets/images/icon3.png" /></a>
-                    <a href="##"><img src="../../assets/images/icon4.png" /></a>
-                </div>
-            </div>
-            <div class="part6">
-                <div class="footerbox clearfix">
-                    <dl class="foot_part1">
-                        <dt>关于公司</dt>
-                        <dd>
-                            <a href="###">关于腾达</a>
-                        </dd>
-                        <dd>
-                            <a href="###">业务范围</a>
-                        </dd>
-                        <dd>
-                            <a href="###">联系我们</a>
-                        </dd>
-                        <dd>
-                            <a href="###">用户留言</a>
-                        </dd>
-                    </dl>
-                    <dl class="foot_part2">
-                        <dt>产品中心</dt>
-                        <dd>
-                            <a href="###">吸音板</a>
-                        </dd>
-                        <dd>
-                            <a href="###">吸音棉</a>
-                        </dd>
-                        <dd>
-                            <a href="###">软包</a>
-                        </dd>
-                        <dd>
-                            <a href="###">硬包</a>
-                        </dd>
-                    </dl>
-                    <dl class="foot_part3">
-                        <dt>新闻中心</dt>
-                        <dd>
-                            <a href="###">企业新闻</a>
-                        </dd>
-                        <dd>
-                            <a href="###">行业新闻</a>
-                        </dd>
-                        <dd>
-                            <a href="###">吸音知识</a>
-                        </dd>
-                    </dl>
-                    <dl class="foot_part4">
-                        <dt>关注我们</dt>
-                        <dd>24小时免费热线</dd>
-                        <dd>0512-66155787</dd>
-                    </dl>
-                </div>
-                <div class="bottom">
-                    <div class="bottomcontent">
-                        <dl class="bottomtext">
-                            <dd><a href="###">问题与反馈</a></dd>
-                            <dd><a href="###">联系我们</a></dd>
-                            <dd><a href="###">版权声明</a></dd>
-                            <dd><a href="###">关于比特工厂</a></dd>
-                        </dl>
-                        <div class="bottomicp cb">
-                            <p>Copyright&nbsp;2015 www.bitworks.cn&nbsp;版权所有：武汉尚伟教育科技有限公司</p>
-                            <p>所有教程、视频除特别声明外，均为原创作品，谢绝任何形式的转载、引用和其他商业用途&nbsp;鄂ICP备&nbsp;13003952号-3</p>
+            <div class="message-panel">
+                <h3 class="home-title">
+                    联系我们
+                    <p class="home-title-tips">有任何合作需求可以联系我们</p>
+                </h3>
+                <el-row :gutter="20">
+                    <el-col :offset="4" :span="8">
+                        <div class="el_col-item">
+                            <el-input placeholder="您的姓名 *" v-model="form.name"></el-input>
                         </div>
-                    </div>
+                        <div class="el_col-item">
+                            <el-input placeholder="您的 E-MAIL *" v-model="form.name"></el-input>
+                        </div>
+                        <div class="el_col-item">
+                            <el-input placeholder="类别" v-model="form.name"></el-input>
+                        </div>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-input
+                            type="textarea"
+                            :rows="7"
+                            placeholder="您的需求 *"
+                            v-model="textarea">
+                        </el-input>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button class="mes-btn" type="primary">发送需求</el-button>
+                    </el-col>
+                </el-row>
+            </div>
+            <div class="tips-panel">
+                <ul class="tips-list-panel">
+                    <li class="tips-list-item">
+                        <svg-icon type="main_phone"></svg-icon>
+                        <p class="tips-list-text">18201282808</p>
+                    </li>
+                    <li class="tips-list-item">
+                        <svg-icon type="main_email"></svg-icon>
+                        <p class="tips-list-text">www.673089899@qq.com</p>
+                    </li>
+                    <li class="tips-list-item">
+                        <svg-icon type="main_address"></svg-icon>
+                        <p class="tips-list-text">湖北省武汉市江夏区大花岭大学城</p>
+                    </li>
+                </ul>
+                <div class="tips-icon">
+                    <svg-icon type="main_gps"></svg-icon>
                 </div>
             </div>
-        </div>
+        </section>
+        <footer class="footer-panel">
+            <ul>
+                <li></li>
+            </ul>
+            <div class="copyright">Copyright © 2018 <span class="copyright-font">Prospect</span></div>
+        </footer>
     </div>
 </template>
 <script>
   import { hySwiper } from '@/components';
 
   export default {
-    components: { hySwiper }
+    components: { hySwiper },
+    data () {
+        return {
+            form: {
+                name: ''
+            }
+        };
+    },
+    methods: {
+        onSubmit () {
+            console.log('submit!');
+        }
+    }
   };
 </script>
