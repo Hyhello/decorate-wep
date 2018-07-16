@@ -29,7 +29,7 @@
             }
         }
         .message-panel {
-            padding: 100px 0;
+            padding: 100px 10px;
             background: url('../../assets/images/msg_bg.png') no-repeat center center;
             background-size: 100%;
             text-align: center;
@@ -229,123 +229,6 @@
                 </ul>
                 <div class="part1_more">
                     <a href="./query.html">查看更多产品</a>
-                </div>
-            </div>
-            <div class="part2">
-                <h1 class="comtitle bgwhite">
-                    <span>云编译</span>
-                </h1>
-                <p class="text_text1">在线学习软件开发，点击从这里开始</p>
-                <p class="text_text2">无需下载IDE，在线编辑、编译和运行C程序</p>
-                <div class="part2_more">
-                    <a href="###">点击进入</a>
-                </div>
-            </div>
-            <div class="part3">
-                <h1 class="comtitle">
-                    <span>最近更新</span>
-                </h1>
-                <table class="newtab">
-                    <tr>
-                        <td rowspan="2">
-                            <div class="abb">
-                                <img src="../../assets/images/Img9.png" />
-                                <div class="alert_abb" style="display:none;">
-                                    如何在比特工厂学习
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <img src="../../assets/images/Img10.png" />
-                        </td>
-                        <td>
-                            <img src="../../assets/images/Img11.png" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../../assets/images/Img12.png" />
-                        </td>
-                        <td>
-                            <img src="../../assets/images/Img13.png" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="part4">
-                <h1 class="comtitle bgwhite">
-                    <span>最近来访</span>
-                </h1>
-                <div class="part4_time">
-                    <table class="part4tab">
-                        <tr>
-                            <td>
-                                <div class="headertime">
-                                    <p class="time-title">23</p>
-                                    <p class="time_time">2015-11</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="headertime">
-                                    <p class="time-title">23</p>
-                                    <p class="time_time">2015-11</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="headertime">
-                                    <p class="time-title">23</p>
-                                    <p class="time_time">2015-11</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="headertime">
-                                    <p class="time-title">23</p>
-                                    <p class="time_time">2015-11</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="headertime">
-                                    <p class="time-title">23</p>
-                                    <p class="time_time">2015-11</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="../../assets/images/time.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/time.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/time.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/time.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/time.png" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="../../assets/images/head.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/head.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/head.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/head.png" />
-                            </td>
-                            <td>
-                                <img src="../../assets/images/head.png" />
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="part4_line"></div>
                 </div>
             </div>
             <div class="message-panel">
