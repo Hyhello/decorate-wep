@@ -4,12 +4,23 @@
  * 描述：tabItem
  */
 <style lang="scss" scoped>
-
+    .fadeIn-enter-active {
+        transition: opacity .3s;
+    }
+    .fadeIn-leave-active {
+        position: absolute;
+    }
+    .fadeIn-enter,
+    .fadeIn-leave-to {
+        opacity: 0;
+    }
 </style>
 <template>
-    <div class="tab-panel__content-item" v-show="tabs.currentValue === label">
-        <slot></slot>
-    </div>
+    <transition name="fadeIn">
+        <div class="tab-panel__content-item" v-show="tabs.currentValue === label">
+            <slot></slot>
+        </div>
+    </transition>
 </template>
 <script>
     export default {
