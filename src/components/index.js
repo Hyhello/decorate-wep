@@ -8,12 +8,13 @@
  import hyFooter from './footer/footer.vue';
  import hyBanner from './banner/banner.vue';
  import hySwiper from './swiper/swiper.vue';
- import hyNews from './news/news.vue';
  import navLeft from './navLeft/navLeft.vue';
  import { Carousel, CarouselItem } from './Carousel';
  import contentTpl from './contentTpl/contentTpl.vue';
  import backTop from './backTop/backTop.vue';
  import { Breadcrumb, BreadcrumbItem } from './breadcrumb';
  import animatePiano from './animatePiano/animatePiano.js';
+ import hyTab from './tab/tab.vue';
+ import hyTabItem from './tab/tab-item.vue';
 
- export { hyHeader, hyFooter, hyBanner, hySwiper, hyNews, Carousel, CarouselItem, navLeft, contentTpl, backTop, Breadcrumb, BreadcrumbItem, animatePiano };
+ export { hyHeader, hyFooter, hyBanner, hySwiper, Carousel, CarouselItem, navLeft, contentTpl, backTop, Breadcrumb, BreadcrumbItem, animatePiano, hyTab, hyTabItem };

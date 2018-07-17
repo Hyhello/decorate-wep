@@ -98,25 +98,6 @@
     .tabtext {display:block;width:292px;height:78px;line-height:70px;background:url(../../assets/images/shadow.png) no-repeat center top;}
     .part1_more {width:100%;text-align:center;margin-bottom:30px;}
     .part1_more a {display:inline-block;padding:10px 30px;border:1px solid #01C2BD;border-radius:10px;-webkit-border-radius:10px;text-decoration:none;color:#01C2BD;box-shadow:inset 0 0 1px #01C2BD;-webkit-box-shadow:inset 0 0 1px #01C2BD;}
-    .part2 {width:100%;height:478px;background:url(../../assets/images/content_bg.png) no-repeat center center;background-size:cover;}
-    .bgwhite span{color:#FFF;border-color:#FFF;}
-    .text_text1,
-    .text_text2 {text-align:center;color:#FFF;font-size:25px;margin-bottom:15px;}
-    .text_text1 {padding-top:30px;margin-bottom:20px;}
-    .text_text2 {margin-bottom:50px;}
-    .part2_more {width:100%;text-align:center;}
-    .part2_more a {display:inline-block;padding:10px 30px;border:1px solid #FFF;border-radius:10px;-webkit-border-radius:10px;text-decoration:none;color:#FFF;box-shadow:inset 0 0 1px #FFF;-webkit-box-shadow:inset 0 0 1px #FFF;}
-    .newtab {border:none;margin:0 auto;border-collapse:separate;border-spacing:12px;text-align:center;}
-    .abb {position:relative;}
-    .part3 {background:#FFF;padding-bottom:80px;}
-    .part4 {width:100%;height:520px;background:url(../../assets/images/content2_bg.png) no-repeat center center;background-size:cover;}
-    .part4_time {width:1200px;margin:0 auto;padding-top:20px;position:relative;}
-    .part4tab {width:100%;text-align:center;border-spacing:10px;}
-    .headertime{min-width:79px;min-height:88px;_height:88px;_width:88px;color:#01C2BD;font-weight:bold;background:url(../../assets/images/time_bg.png) no-repeat center center;}
-    .time-title {font-size:25px;padding-top:10px;padding-bottom:5px;}
-    .part4_line {width:100%;height:1px;background:#FFF;overflow:hidden;font-size:1px;zoom:1;position:absolute;left:0;bottom:105px;}
-    .part5 {width:100%;text-align:center;background:#FFF;padding-bottom:80px;}
-    .icon a{margin:5px;}
     .footer-panel {
         width: 100%;
         height: 280px;
@@ -153,14 +134,12 @@
                 <h1 class="comtitle">
                     <span>精选分类</span>
                 </h1>
-                <div class="nav_nav">
-                    <ul class="clearfix">
-                        <li><a href="javascript: void(0);" class="leftbtn active">服务范围</a></li>
-                        <li><a href="javascript: void(0);" class="bl">产品推荐</a></li>
-                        <li><a href="javascript: void(0);" class="bl">客户案例</a></li>
-                        <li><a href="javascript: void(0);" class="bl rightbtn">关于我们</a></li>
-                    </ul>
-                </div>
+                <hy-tab v-model="currentValue">
+                    <hy-tab-item label="服务范围">服务范围</hy-tab-item>
+                    <hy-tab-item label="产品推荐">产品推荐</hy-tab-item>
+                    <hy-tab-item label="客户案例">客户案例</hy-tab-item>
+                    <hy-tab-item label="关于我们">关于我们</hy-tab-item>
+                </hy-tab>
                 <ul class="tabbox clearfix">
                     <li style="margin-left:0;">
                         <a href="###">
@@ -245,7 +224,7 @@
                             <el-input placeholder="您的 E-MAIL *" v-model="form.name"></el-input>
                         </div>
                         <div class="el_col-item">
-                            <el-input placeholder="类别" v-model="form.name"></el-input>
+                            <el-input placeholder="您的面积 *" v-model="form.name"></el-input>
                         </div>
                     </el-col>
                     <el-col :span="8">
@@ -253,7 +232,7 @@
                             type="textarea"
                             :rows="7"
                             placeholder="您的需求 *"
-                            v-model="textarea">
+                            v-model="form.name">
                         </el-input>
                     </el-col>
                     <el-col :span="24">
@@ -290,12 +269,13 @@
     </div>
 </template>
 <script>
-  import { hySwiper } from '@/components';
+  import { hySwiper, hyTab, hyTabItem } from '@/components';
 
   export default {
-    components: { hySwiper },
+    components: { hySwiper, hyTab, hyTabItem },
     data () {
         return {
+            currentValue: '服务范围',
             form: {
                 name: ''
             }
