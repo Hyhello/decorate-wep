@@ -9,6 +9,10 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
+    pageNo: 1,
+    pageSize: 20,
+    totalElement: 0,
+    loadingText: '加载中'
 };
 
 export default new Vuex.Store({
