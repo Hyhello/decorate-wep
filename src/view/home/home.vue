@@ -11,6 +11,7 @@
         min-width: 1200px;
         _width: 1200px;
         background-color: #FFF;
+        text-align: center;
         .home-title {
             text-align: center;
             font-size: 26px;
@@ -18,6 +19,13 @@
             font-stretch: normal;
             color: #ffffff;
             margin-bottom: 60px;
+            &.blueColor {
+                display: inline-block;
+                color: #01C2BD;
+                padding: 70px 15px 15px;
+                margin-bottom: 45px;
+                border-bottom: 1px solid #01C2BD;
+            }
             .home-title-tips {
                 margin-top: 5px;
                 font-size: 12px;
@@ -77,18 +85,7 @@
             }
         }
     }
-    .part1 {width:1198px;margin:0 auto;}
-    .comtitle {text-align:center;margin-bottom:50px;letter-spacing:1px;}
-    .comtitle span {display:inline-block;font-size:35px;color:#01C2BD;font-weight:500;width:200px;padding:70px 0 35px;border-bottom:1px solid #01C2BD;}
-    .nav_nav {width:1198px;margin:0 auto;text-align:center;}
-    .nav_nav ul {display:inline-block;margin-bottom:50px;}
-    .nav_nav ul li{float:left;}
-    .nav_nav ul li a {display:inline-block;padding:10px 40px;border:1px solid #939AA0;color:#939AA0;text-decoration:none;transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
-    .nav_nav ul li a.bl {border-left:none;}
-    .nav_nav ul li a.leftbtn {border-radius:10px 0 0 10px;-webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;}
-    .nav_nav ul li a.rightbtn {border-radius:0 10px 10px 0;-webkit-border-radius:0 10px 10px 0;-moz-border-radius:0 10px 10px 0;}
-    .nav_nav ul li a:hover,
-    .nav_nav ul li a.active {background:#01C2BD;color:#FFEDED;border-color:#01C2BD;}
+    .part1 {width: 1198px;margin: 0 auto;}
 
     .tabbox{width:1198px;margin:0 auto;margin-bottom:30px;}
     .tabbox li{float:left;margin-left:10px;margin-bottom:24px;width:292px;text-align:center;}
@@ -100,10 +97,46 @@
     .part1_more a {display:inline-block;padding:10px 30px;border:1px solid #01C2BD;border-radius:10px;-webkit-border-radius:10px;text-decoration:none;color:#01C2BD;box-shadow:inset 0 0 1px #01C2BD;-webkit-box-shadow:inset 0 0 1px #01C2BD;}
     .footer-panel {
         width: 100%;
-        height: 280px;
+        height: 270px;
+        padding-top: 35px;
         background: #1f2830 url(../../assets/images/footer_bg.png) no-repeat top center;
         background-size: 100% 100%;
         position: relative;
+        .footer_box {
+            color: #FFFFFF;
+            width: 800px;
+            margin: 0 auto;
+            position: relative;
+            .footer-title {
+                font-size: 22px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 1px;
+                color: #01C2BD;
+                margin-bottom: 10px;
+            }
+            .footer-p {
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 25px;
+                letter-spacing: 1px;
+                color: #ffffff;
+                .footer-p-label {
+                    color: #01C2BD;
+                }
+            }
+            .wechat-panel {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                .wechat-tips {
+                    padding-top: 10px;
+                }
+            }
+        }
         .copyright {
             text-align: center;
             position: absolute;
@@ -131,9 +164,9 @@
         <!--content-->
         <section class="contentbox">
             <div class="part1">
-                <h1 class="comtitle">
-                    <span>精选分类</span>
-                </h1>
+                <h3 class="home-title blueColor">
+                    精选分类
+                </h3>
                 <hy-tab v-model="currentValue">
                     <hy-tab-item label="服务范围">
                         <ul class="tabbox clearfix">
@@ -206,7 +239,7 @@
                             <a href="./query.html">查看更多产品</a>
                         </div>
                     </hy-tab-item>
-                    <hy-tab-item label="产品推荐">产品推荐</hy-tab-item>
+                    <hy-tab-item label="新闻中心">新闻中心</hy-tab-item>
                     <hy-tab-item label="客户案例">客户案例</hy-tab-item>
                     <hy-tab-item label="关于我们">关于我们</hy-tab-item>
                 </hy-tab>
@@ -219,13 +252,13 @@
                 <el-row :gutter="20">
                     <el-col :offset="4" :span="8">
                         <div class="el_col-item">
-                            <el-input placeholder="您的姓名 *" v-model="form.name"></el-input>
+                            <el-input placeholder="您的姓名 *" v-model="addInfo.name"></el-input>
                         </div>
                         <div class="el_col-item">
-                            <el-input placeholder="您的 E-MAIL *" v-model="form.name"></el-input>
+                            <el-input placeholder="您的 E-MAIL *" v-model="addInfo.email"></el-input>
                         </div>
                         <div class="el_col-item">
-                            <el-input placeholder="您的面积 *" v-model="form.name"></el-input>
+                            <el-input placeholder="您的面积 *" v-model="addInfo.area"></el-input>
                         </div>
                     </el-col>
                     <el-col :span="8">
@@ -233,11 +266,11 @@
                             type="textarea"
                             :rows="7"
                             placeholder="您的需求 *"
-                            v-model="form.name">
+                            v-model="addInfo.demand">
                         </el-input>
                     </el-col>
                     <el-col :span="24">
-                        <el-button class="mes-btn" type="primary">发送需求</el-button>
+                        <el-button class="mes-btn" @click="sendDemand" type="primary">发送需求</el-button>
                     </el-col>
                 </el-row>
             </div>
@@ -249,11 +282,11 @@
                     </li>
                     <li class="tips-list-item">
                         <svg-icon type="main_email"></svg-icon>
-                        <p class="tips-list-text">www.673089899@qq.com</p>
+                        <p class="tips-list-text">www.813221592@qq.com</p>
                     </li>
                     <li class="tips-list-item">
                         <svg-icon type="main_address"></svg-icon>
-                        <p class="tips-list-text">湖北省武汉市江夏区大花岭大学城</p>
+                        <p class="tips-list-text">北京市密云区高岭镇政府办公楼208室-436</p>
                     </li>
                 </ul>
                 <div class="tips-icon">
@@ -262,9 +295,26 @@
             </div>
         </section>
         <footer class="footer-panel">
-            <ul>
-                <li></li>
-            </ul>
+            <div class="footer_box">
+                <h3 class="footer-title">联系叶斌腾达</h3>
+                <p class="footer-p">北京市密云区高岭镇政府办公楼208室-436</p>
+                <p class="footer-p">
+                    <span class="footer-p-label">电话：</span>
+                    18201282808
+                </p>
+                <p class="footer-p">
+                    <span class="footer-p-label">邮箱：</span>
+                    www.813221592@qq.com
+                </p>
+                <p class="footer-p">
+                    <span class="footer-p-label">邮编：</span>
+                    100000
+                </p>
+                <div class="wechat-panel">
+                    <img src="../../assets/images/wechat.png" alt="wechat" />
+                    <p class="wechat-tips">- 官方微信 -</p>
+                </div>
+            </div>
             <div class="copyright">Copyright © 2018 <span class="copyright-font">Prospect</span></div>
         </footer>
     </div>
@@ -277,12 +327,17 @@
     data () {
         return {
             currentValue: '服务范围',
-            form: {
-                name: ''
-            }
+            addInfo: {}
         };
     },
     methods: {
+        sendDemand () {
+            this.addInfo = {};
+            this.$message({
+                message: '需求已提交！',
+                type: 'success'
+            });
+        },
         onSubmit () {
             console.log('submit!');
         }

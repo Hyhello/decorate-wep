@@ -4,6 +4,7 @@
  * 描述：app入口
  */
 <style lang="scss">
+    @import './assets/theme/index.css';
     @import 'normalize.css';
     @import 'src/scss/common';
     @import 'src/scss/animate';
