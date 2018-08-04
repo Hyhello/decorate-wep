@@ -337,9 +337,6 @@
                 message: '需求已提交！',
                 type: 'success'
             });
-        },
-        onSubmit () {
-            console.log('submit!');
         }
     }
   };
