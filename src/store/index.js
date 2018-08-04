@@ -11,6 +11,7 @@ Vue.use(Vuex);
 const state = {
     pageNo: 1,
     pageSize: 20,
+    layout: 'prev, pager, next, total',
     totalElement: 0,
     loadingText: '加载中'
 };

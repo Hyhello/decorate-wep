@@ -8,7 +8,7 @@ export default {
     data () {
         return {
             list: [],                                           // 列表展示
-            loading: true,                                     // loading 动画
+            loading: true,                                      // loading 动画
             loadingText: this.$store.state.loadingText,         // loading 文字
             searchData: {                                       // 搜索条件
                 pageNo: this.$store.state.pageNo,               // 当前页码
@@ -29,7 +29,6 @@ export default {
     },
     methods: {
         currentChange (val) {
-            this.loading = false;
             this.searchData.pageNo = val;
             // 获取列表
             this._getList();

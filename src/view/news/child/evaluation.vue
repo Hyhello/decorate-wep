@@ -70,39 +70,41 @@
 </style>
 <template>
     <div class="news-panel">
-        <div class="overview">
-            <div class="content-left">
-                <img src="../../../assets/images/khpj.jpg" alt="">
-            </div>
-            <div class="content-center">
-                <h3>润声建材产品好，服务优！</h3>
-                <span>经朋友介绍，在装饰材料和软包这块选择了润声建材，开始对他们产品还不是蛮放心，经过他们客服的介绍，讲解，材料对比后，觉得他家产品真心不错，客服服务态度挺好，很有耐性！很完美的一次合作！...</span>
+        <div class="container" v-loading="loading" :loading-text="loadingText">
+            <!-- <div class="overview">
+                <div class="content-left">
+                    <img src="../../../assets/images/khpj.jpg" alt="">
+                </div>
+                <div class="content-center">
+                    <h3>润声建材产品好，服务优！</h3>
+                    <span>经朋友介绍，在装饰材料和软包这块选择了润声建材，开始对他们产品还不是蛮放心，经过他们客服的介绍，讲解，材料对比后，觉得他家产品真心不错，客服服务态度挺好，很有耐性！很完美的一次合作！...</span>
+                </div>
+            </div> -->
+            <ul>
+                <li class="news-panel-item" v-for="(item, index) in list" :data-index="index + 1" :key="index">
+                    <router-link to="/home" v-animate-piano="item.title"></router-link>
+                    <span class="news-item-time">{{item.releaseTime}}</span>
+                </li>
+            </ul>
+            <div class="page-panel" v-show="pageShow">
+                <el-pagination
+                    :page-size="searchData.pageSize"
+                    :current-page="searchData.pageNo"
+                    :layout="$store.state.layout"
+                    :total="list.length">
+                </el-pagination>
             </div>
         </div>
-        <ul class="container" v-loading="loading" :loading-text="loadingText">
-            <li class="news-panel-item" v-for="(item, index) in list" :data-index="index + 1" :key="index">
-                <router-link to="/home" v-animate-piano="item.title"></router-link>
-                <span class="news-item-time">{{item.releaseTime}}</span>
-            </li>
-        </ul>
     </div>
 </template>
 <script>
+    import list from '@/mixins/list';
     import { getKnowledgeList } from '@/api/news';
     import { animatePiano } from '@/components';
 
     export default {
+        mixins: [ list ],
         components: { animatePiano },
-        data () {
-            return {
-                loading: true,
-                loadingText: '加载中',
-                list: []
-            };
-        },
-        created () {
-            this._getList();
-        },
         methods: {
             async _getList () {
                 const result = await getKnowledgeList();
