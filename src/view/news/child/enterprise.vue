@@ -99,7 +99,7 @@
 </template>
 <script>
     import list from '@/mixins/list';
-    import { getKnowledgeList } from '@/api/news';
+    import { getEnterpriseList } from '@/api/news';
     import { animatePiano } from '@/components';
 
     export default {
@@ -107,7 +107,7 @@
         components: { animatePiano },
         methods: {
             async _getList () {
-                const result = await getKnowledgeList();
+                const result = await getEnterpriseList();
                 this.loading = false;
                 this.list = result.data;
             }
