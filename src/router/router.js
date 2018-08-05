@@ -114,6 +114,14 @@ export default [
                 meta: {
                     title: '烫金体'
                 }
+            },
+            {
+                path: 'detail',
+                hidden: true,
+                component: _import('detail'),
+                meta: {
+                    title: '详情'
+                }
             }
         ]
     },
@@ -122,7 +130,17 @@ export default [
         component: _import('customerCase/customerCase'),
         meta: {
             title: '客户案例'
-        }
+        },
+        children: [
+            {
+                path: 'detail',
+                hidden: true,
+                component: _import('detail'),
+                meta: {
+                    title: '详情'
+                }
+            }
+        ]
     },
     {
         path: '/news',
@@ -158,6 +176,14 @@ export default [
                 component: _import('news/child/soundknowledge'),
                 meta: {
                     title: '吸音知识'
+                }
+            },
+            {
+                path: 'detail',
+                hidden: true,
+                component: _import('detail'),
+                meta: {
+                    title: '详情'
                 }
             }
         ]
