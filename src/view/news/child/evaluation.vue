@@ -71,15 +71,15 @@
 <template>
     <div class="news-panel">
         <div class="container" v-loading="loading" :loading-text="loadingText">
-            <!-- <div class="overview">
+            <div class="overview" v-show="pageShow">
                 <div class="content-left">
-                    <img src="../../../assets/images/khpj.jpg" alt="">
+                    <img :src="requireSrc(detailInfo.src)" alt="img" />
                 </div>
                 <div class="content-center">
-                    <h3>润声建材产品好，服务优！</h3>
-                    <span>经朋友介绍，在装饰材料和软包这块选择了润声建材，开始对他们产品还不是蛮放心，经过他们客服的介绍，讲解，材料对比后，觉得他家产品真心不错，客服服务态度挺好，很有耐性！很完美的一次合作！...</span>
+                    <h3><router-link to="/home">{{detailInfo.title}}</router-link></h3>
+                    <span>{{detailInfo.content}}</span>
                 </div>
-            </div> -->
+            </div>
             <ul>
                 <li class="news-panel-item" v-for="(item, index) in list" :data-index="index + 1" :key="index">
                     <router-link to="/home" v-animate-piano="item.title"></router-link>
@@ -99,17 +99,27 @@
 </template>
 <script>
     import list from '@/mixins/list';
-    import { getKnowledgeList } from '@/api/news';
+    import { getEvaluationList } from '@/api/news';
     import { animatePiano } from '@/components';
 
     export default {
         mixins: [ list ],
         components: { animatePiano },
+        data () {
+            return {
+                detailInfo: {}
+            };
+        },
         methods: {
             async _getList () {
-                const result = await getKnowledgeList();
+                const result = await getEvaluationList();
                 this.loading = false;
                 this.list = result.data;
+                this.detailInfo = this.list[0];
+            },
+            requireSrc (src) {
+                if (!src) return '';
+                return require(`../../../assets/images/${src}`);
             }
         }
     };

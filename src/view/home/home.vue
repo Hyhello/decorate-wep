@@ -241,7 +241,6 @@
                     </hy-tab-item>
                     <hy-tab-item label="新闻中心">新闻中心</hy-tab-item>
                     <hy-tab-item label="客户案例">客户案例</hy-tab-item>
-                    <hy-tab-item label="关于我们">关于我们</hy-tab-item>
                 </hy-tab>
             </div>
             <div class="message-panel">

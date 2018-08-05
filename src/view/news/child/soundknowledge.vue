@@ -71,15 +71,15 @@
 <template>
     <div class="news-panel" v-loading="loading" :loading-text="loadingText">
         <div class="container">
-            <!-- <div class="overview">
+            <div class="overview" v-show="pageShow">
                 <div class="content-left">
-                    <img src="../../../assets/images/xyzs.jpg" alt="">
+                    <img :src="requireSrc(detailInfo.src)" alt="img" />
                 </div>
                 <div class="content-center">
-                    <h3>室内声学设计必须考虑的因素</h3>
-                    <span>室内声学设计必须考虑的因素！我们在进行对室内进行设计的时候，必须考虑到其声学的因素，这对整个室内的环境起着非常重要的作用。那么如此重要到底应该怎么办呢？下面小编就分享几点： 声学设计要考虑到两个方面...</span>
+                    <h3><router-link to="/home">{{detailInfo.title}}</router-link></h3>
+                    <span v-html="detailInfo.review"></span>
                 </div>
-            </div> -->
+            </div>
             <ul>
                 <li class="news-panel-item" v-for="(item, index) in list" :data-index="index + 1" :key="index">
                     <router-link to="/home" v-animate-piano="item.title"></router-link>
@@ -105,11 +105,21 @@
     export default {
         mixins: [ list ],
         components: { animatePiano },
+        data () {
+            return {
+                detailInfo: {}
+            };
+        },
         methods: {
             async _getList () {
                 const result = await getKnowledgeList();
                 this.loading = false;
                 this.list = result.data;
+                this.detailInfo = this.list[0];
+            },
+            requireSrc (src) {
+                if (!src) return '';
+                return require(`../../../assets/images/${src}`);
             }
         }
     };

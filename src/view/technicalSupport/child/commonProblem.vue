@@ -3,9 +3,6 @@
  * 时间：2018-06-07
  * 描述：常见问题
  */
-<style lang="scss" scoped>
-
-</style>
 <template>
     <div>
         <p class="text-format">
