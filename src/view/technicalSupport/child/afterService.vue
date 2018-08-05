@@ -21,7 +21,7 @@
             <img src="../../../assets/images/afterService.jpg" alt="afterService" />
         </p>
         <p class="text-format">
-            欢迎选购苏州润声吸音板、聚酯纤维吸音板等相关产品！ 手机：18201282808（杨先生）
+            欢迎选购北京叶斌腾达吸音板、聚酯纤维吸音板等相关产品！ 手机：18201282808（杨先生）
         </p>
     </div>
 </template>

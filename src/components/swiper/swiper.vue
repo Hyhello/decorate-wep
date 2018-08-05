@@ -68,24 +68,20 @@
                 currentIndex: 0,
                 list: [
                     {
-                        src: require('../../assets/images/banner.jpg'),
-                        title: '核心课程'
+                        src: require('../../assets/images/首页图banner.jpeg'),
+                        title: '音乐厅'
                     },
                     {
-                        src: require('../../assets/images/banner.jpg'),
-                        title: '项目实训'
+                        src: require('../../assets/images/首页轮换多功能厅.jpeg'),
+                        title: '多功能厅'
                     },
                     {
-                        src: require('../../assets/images/banner.jpg'),
-                        title: '教师在线指导'
+                        src: require('../../assets/images/首页轮换录音棚.jpeg'),
+                        title: '录音棚'
                     },
                     {
-                        src: require('../../assets/images/banner.jpg'),
-                        title: '团体学习社会'
-                    },
-                    {
-                        src: require('../../assets/images/banner.jpg'),
-                        title: '民企面试题解析'
+                        src: require('../../assets/images/首页轮换电影院.jpeg'),
+                        title: '电影院'
                     }
                 ]
             };
