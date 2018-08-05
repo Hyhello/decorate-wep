@@ -103,20 +103,20 @@
         computed: {
             routerList () {
                 let routes = this.$router.options.routes;
-                routes = routes.concat([
-                    {
-                        path: '/about/message',
-                        meta: {
-                            title: '用户留言'
-                        }
-                    },
-                    {
-                        path: '/about/contactUs',
-                        meta: {
-                            title: '联系我们'
-                        }
-                    }
-                ]);
+                // routes = routes.concat([
+                //     {
+                //         path: '/about/message',
+                //         meta: {
+                //             title: '用户留言'
+                //         }
+                //     },
+                //     {
+                //         path: '/about/contactUs',
+                //         meta: {
+                //             title: '联系我们'
+                //         }
+                //     }
+                // ]);
                 return routes;
             }
         }

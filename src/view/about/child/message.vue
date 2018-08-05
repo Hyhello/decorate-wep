@@ -53,7 +53,7 @@
                     message: '需求已提交！',
                     type: 'success'
                 });
-            },
+            }
         }
     };
 </script>
