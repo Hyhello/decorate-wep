@@ -88,7 +88,7 @@
     .part1 {width: 1198px;margin: 0 auto;}
 
     .tabbox{width:1198px;margin:0 auto;margin-bottom:30px;}
-    .tabbox li{float:left;margin-left:10px;margin-bottom:24px;width:292px;text-align:center;}
+    .tabbox li{float:left;margin-left:10px;margin-bottom:24px;width:292px; border-radius: 4px; text-align:center;}
     .tabbox li a {display:inline-block;text-decoration:none;color:#000;text-align:center;transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
     .tabbox li a:hover {color:#01C2BD;}
     .tabbox li a img {width:281px;height:169px;}
@@ -167,81 +167,72 @@
                 <h3 class="home-title blueColor">
                     精选分类
                 </h3>
-                <hy-tab v-model="currentValue">
-                    <hy-tab-item label="服务范围">
-                        <ul class="tabbox clearfix">
-                            <li style="margin-left:0;">
-                                <a href="###">
-                                    <img src="/static/images/xyb1.jpg" alt="javascript"/>
-                                    <span class="tabtext">
-                                        吸音板
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="###">
-                                    <img src="/static/images/xym1.jpg" alt="ps"/>
-                                    <span class="tabtext">
-                                        吸音棉
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="###">
-                                    <img src="/static/images/gyz1.jpg" alt="java"/>
-                                    <span class="tabtext">
-                                        隔音毡
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="###">
-                                    <img src="/static/images/rb1.jpg" alt="python"/>
-                                    <span class="tabtext">
-                                        软包
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="###">
-                                    <img src="/static/images/yb1.jpg" alt="python"/>
-                                    <span class="tabtext">
-                                        硬包
-                                    </span>
-                                </a>
-                            </li>
-                            <li style="margin-left:0;">
-                                <a href="###">
-                                    <img src="/static/images/mryhb1.jpg" alt="css3"/>
-                                    <span class="tabtext">
-                                        植绒印花板
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="###">
-                                    <img src="/static/images/xyb2.jpg" alt="bootstrap"/>
-                                    <span class="tabtext">
-                                        吸引体
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="###">
-                                    <img src="/static/images/tjb1.jpg" alt="jq"/>
-                                    <span class="tabtext">
-                                        烫金板
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="part1_more">
-                            <a href="./query.html">查看更多产品</a>
-                        </div>
-                    </hy-tab-item>
-                    <hy-tab-item label="新闻中心">新闻中心</hy-tab-item>
-                    <hy-tab-item label="客户案例">客户案例</hy-tab-item>
-                </hy-tab>
+                <ul class="tabbox clearfix">
+                    <li style="margin-left:0;">
+                        <a href="###">
+                            <img src="/static/images/xyb1.jpg" alt="javascript"/>
+                            <span class="tabtext">
+                                吸音板
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img src="/static/images/xym1.jpg" alt="ps"/>
+                            <span class="tabtext">
+                                吸音棉
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img src="/static/images/gyz1.jpg" alt="java"/>
+                            <span class="tabtext">
+                                隔音毡
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img src="/static/images/rb1.jpg" alt="python"/>
+                            <span class="tabtext">
+                                软包
+                            </span>
+                        </a>
+                    </li>
+                    <li style="margin-left:0;">
+                        <a href="###">
+                            <img src="/static/images/yb1.jpg" alt="python"/>
+                            <span class="tabtext">
+                                硬包
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img src="/static/images/mryhb1.jpg" alt="css3"/>
+                            <span class="tabtext">
+                                植绒印花板
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img src="/static/images/xyb2.jpg" alt="bootstrap"/>
+                            <span class="tabtext">
+                                吸引体
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img src="/static/images/tjb1.jpg" alt="jq"/>
+                            <span class="tabtext">
+                                烫金板
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="message-panel">
                 <h3 class="home-title">
@@ -325,7 +316,6 @@
     components: { hySwiper, hyTab, hyTabItem },
     data () {
         return {
-            currentValue: '服务范围',
             addInfo: {}
         };
     },

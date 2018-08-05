@@ -71,15 +71,6 @@
 <template>
     <div class="news-panel">
         <div class="container" v-loading="loading" :loading-text="loadingText">
-            <!-- <div class="overview">
-                <div class="content-left">
-                    <img src="../../../assets/images/qyxw.jpg" alt="">
-                </div>
-                <div class="content-center">
-                    <h3>室内装饰业未来的发展特点</h3>
-                    <span>室内装饰业未来的发展以及发展趋势是怎样的？未来发展有什么特点，有什么明显的特征。下面苏州润声聚酯纤维吸音板小编来告诉你： 一 、它作为社会发展到一定阶段的大众文化消费，要以一定的经济实力和文化素养为...</span>
-                </div>
-            </div> -->
             <div class="overview" v-show="pageShow">
                 <div class="content-left">
                     <img :src="requireSrc(detailInfo.src)" alt="img" />
