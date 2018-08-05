@@ -80,6 +80,15 @@
                     <span>室内装饰业未来的发展以及发展趋势是怎样的？未来发展有什么特点，有什么明显的特征。下面苏州润声聚酯纤维吸音板小编来告诉你： 一 、它作为社会发展到一定阶段的大众文化消费，要以一定的经济实力和文化素养为...</span>
                 </div>
             </div> -->
+            <div class="overview" v-show="pageShow">
+                <div class="content-left">
+                    <img :src="requireSrc(detailInfo.src)" alt="img" />
+                </div>
+                <div class="content-center">
+                    <h3><router-link to="/home">{{detailInfo.title}}</router-link></h3>
+                    <span>{{detailInfo.review}}</span>
+                </div>
+            </div>
             <ul>
                 <li class="news-panel-item" v-for="(item, index) in list" :data-index="index + 1" :key="index">
                     <router-link to="/home" v-animate-piano="item.title"></router-link>
@@ -105,11 +114,21 @@
     export default {
         mixins: [ list ],
         components: { animatePiano },
+        data () {
+            return {
+                detailInfo: {}
+            };
+        },
         methods: {
             async _getList () {
                 const result = await getEnterpriseList();
                 this.loading = false;
                 this.list = result.data;
+                this.detailInfo = this.list[0];
+            },
+            requireSrc (src) {
+                if (!src) return '';
+                return require(`../../../assets/images/${src}`);
             }
         }
     };
