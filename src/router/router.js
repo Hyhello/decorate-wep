@@ -126,6 +126,30 @@ export default [
         ]
     },
     {
+        path: '/business',
+        component: _import('business/business'),
+        meta: {
+            title: '业务范围'
+        },
+        children: [
+            {
+                path: 'businessList',
+                component: _import('business/child/businessList'),
+                meta: {
+                    title: '业务范围'
+                }
+            },
+            {
+                path: 'detail',
+                hidden: true,
+                component: _import('business/detail'),
+                meta: {
+                    title: '详情'
+                }
+            }
+        ]
+    },
+    {
         path: '/customerCase',
         component: _import('customerCase/customerCase'),
         meta: {

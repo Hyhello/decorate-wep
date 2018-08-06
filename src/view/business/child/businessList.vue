@@ -1,7 +1,7 @@
 /**
  * 作者：yeshengqiang
  * 时间：2018-06-07
- * 描述：客户案例
+ * 描述：业务范围
  */
 <style lang="scss" scoped>
     @import 'src/scss/vars';
@@ -12,15 +12,15 @@
         padding: 10px;
         margin-bottom: 15px;
         .query_title {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .right_img img{
             width: 202px;
             height: 170px;
         }
         .right_text {
-            width: 768px;
-            padding: 5px 0 5px 10px;
+            width: 753px;
+            padding: 5px 10px 5px 15px;
             max-height: 160px;
             _height: 160px;
             overflow: hidden;
@@ -52,16 +52,15 @@
         <ul>
             <li v-for="(item, index) in list" :key="index" v-animate-line class="right_content clearfix">
                 <div class="right_img fl">
-                    <img src="../../assets/images/course.png" />
+                    <img :src="requireSrc(item.src)" alt="img" />
                 </div>
                 <div class="right_text fl">
-                    <h3 class="query_title">北京住宅隔音案例-各住宅小区清单</h3>
-                    <p>《从零开始学习软件开发》是一门专门为零基础学员设计的、已C语言为入门语言的软件开发课程，即使你从未有过编程经验，也可以轻松的程序设计。</p>
-                    <p class="query_title">本课程分为基础和实训课程两部分，基础部分主要讲解必备的软件开发、程序设计知识，实训部分教师将带领和引导学员设计和开发一个简单地媒体播放器，以提升学员项目经验及编程能力。</p>
+                    <h3 class="query_title">{{item.title}}</h3>
+                    <p>{{item.review_top}}</p>
+                    <p class="query_title">{{item.review_bottom}}</p>
                     <div class="right_bottom">
-                        <span class="mr30">学员要求：<span class="right_color">无编程经验要求</span></span>
-                        <span>课时：<span class="right_color">60</span></span>
-                        <a href="javascript: void(0);" class="begin">查看详情</a>
+                        <span class="mr30">设计内容：<span class="right_color">{{item.design}}</span></span>
+                        <a href="javascript: void(0);" @click="getDetail(item.id)" class="begin">查看详情</a>
                     </div>
                 </div>
             </li>
@@ -78,15 +77,28 @@
 </template>
 <script>
     import list from '@/mixins/list';
-    import { getCustomerCase } from '@/api/customerCase';
+    import { getBusinessList } from '@/api/business';
 
     export default {
         mixins: [ list ],
+        data () {
+            return {
+                detailInfo: {}
+            };
+        },
         methods: {
             async _getList () {
-                const result = await getCustomerCase();
+                const result = await getBusinessList();
                 this.loading = false;
                 this.list = result.data;
+                this.detailInfo = this.list[0];
+            },
+            getDetail (id) {
+                this.$router.push({path: '/business/detail', query: {id}});
+            },
+            requireSrc (src) {
+                if (!src) return '';
+                return require(`../../../assets/images/${src}`);
             }
         }
     };
