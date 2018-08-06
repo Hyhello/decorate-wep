@@ -13,7 +13,8 @@ const state = {
     pageSize: 20,
     layout: 'prev, pager, next, total',
     totalElement: 0,
-    loadingText: '加载中'
+    loadingText: '加载中',
+    company: '北京叶斌腾达装饰设计有限公司'
 };
 
 export default new Vuex.Store({

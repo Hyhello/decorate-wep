@@ -76,13 +76,13 @@
                     <img :src="requireSrc(detailInfo.src)" alt="img" />
                 </div>
                 <div class="content-center">
-                    <h3><router-link to="/home">{{detailInfo.title}}</router-link></h3>
+                    <h3><router-link :to="{path: '/news/detail', query: { id: detailInfo.id, from: 'enterprise' }}">{{detailInfo.title}}</router-link></h3>
                     <span>{{detailInfo.review}}</span>
                 </div>
             </div>
             <ul>
                 <li class="news-panel-item" v-for="(item, index) in list" :data-index="index + 1" :key="index">
-                    <router-link to="/home" v-animate-piano="item.title"></router-link>
+                    <router-link :to="{path: '/news/detail', query: { id: item.id, from: 'enterprise' }}" v-animate-piano="item.title"></router-link>
                     <span class="news-item-time">{{item.releaseTime}}</span>
                 </li>
             </ul>

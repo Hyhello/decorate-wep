@@ -19,6 +19,7 @@ export function findDetail (id, arr) {
         }
     }
     if (~index) {
+        console.log(index);
         const _prev = index - 1 < 0 ? null : arr[index - 1];
         const _next = index + 1 > alen - 1 ? null : arr[index + 1];
         result._prevId = _prev && _prev.id;

@@ -44,7 +44,7 @@
         <h3 class="detail-title">
             {{detailInfo.title}}
             <div class="detail-title-tips">
-                来源：<font color="#CC0000">北京叶斌腾达装饰设计有限公司</font> 发布时间：<font color="#CC0000">{{detailInfo.releaseTime}}</font> 已被浏览 <font color="#CC0000">{{detailInfo.times}}</font> 次
+                来源：<font color="#CC0000">{{this.$store.state.company}}</font> 发布时间：<font color="#CC0000">{{detailInfo.releaseTime}}</font> 已被浏览 <font color="#CC0000">{{detailInfo.times}}</font> 次
             </div>
         </h3>
         <div class="detail-content" v-html="detailInfo.content"></div>
@@ -59,7 +59,7 @@
     </div>
 </template>
 <script>
-    import { getKnowledgeDetail } from '@/api/news';
+    import { getKnowledgeDetail, getIndustryDetail, getEvaluationDetail, getEnterpriseDetail } from '@/api/news';
 
     export default {
         data () {
@@ -68,15 +68,35 @@
                 detailInfo: {}
             };
         },
+        computed: {
+            getFnDetail () {
+                const from = this.$route.query.from;
+                let fn = () => {};
+                switch (from.toLowerCase()) {
+                    case 'knowledge':
+                        fn = getKnowledgeDetail;
+                        break;
+                    case 'industry':
+                        fn = getIndustryDetail;
+                        break;
+                    case 'evaluation':
+                        fn = getEvaluationDetail;
+                        break;
+                    case 'enterprise':
+                        fn = getEnterpriseDetail;
+                        break;
+                }
+                return fn;
+            }
+        },
         created () {
             this._getDetail(this.$route.query.id);
-            this._getDetail('5255bf7b-0217-4735-9936-4c9d0b1c0b5b');
         },
         methods: {
             async _getDetail (id) {
                 if (!id) return;
                 this.loading = true;
-                const result = await getKnowledgeDetail({id});
+                const result = await this.getFnDetail({id});
                 this.loading = false;
                 this.detailInfo = result.data;
             }

@@ -46,6 +46,18 @@
     });
 });
 
+mockApi.onGet('/api/news/evaluation/detail').reply(args => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve([200, {
+                code: 0,
+                data: findDetail(args.params.id, evaluation),
+                message: 'ok'
+            }]);
+        }, 1000);
+    });
+});
+
 mockApi.onGet('/api/news/industry/list').reply(args => {
     return new Promise((resolve, reject) => {
        setTimeout(() => {
@@ -58,6 +70,18 @@ mockApi.onGet('/api/news/industry/list').reply(args => {
     });
 });
 
+mockApi.onGet('/api/news/industry/detail').reply(args => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve([200, {
+                code: 0,
+                data: findDetail(args.params.id, industry),
+                message: 'ok'
+            }]);
+        }, 1000);
+    });
+});
+
 mockApi.onGet('/api/news/enterprise/list').reply(args => {
     return new Promise((resolve, reject) => {
        setTimeout(() => {
@@ -67,5 +91,17 @@ mockApi.onGet('/api/news/enterprise/list').reply(args => {
                message: 'ok'
            }]);
        }, 1000);
+    });
+});
+
+mockApi.onGet('/api/news/enterprise/detail').reply(args => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve([200, {
+                code: 0,
+                data: findDetail(args.params.id, enterprise),
+                message: 'ok'
+            }]);
+        }, 1000);
     });
 });
