@@ -50,13 +50,11 @@
         <div class="detail-content" v-html="detailInfo.content"></div>
         <div class="detail-btn">
             上一篇：
-            <a href="javascript: void(0);" @click="_getDetail(detailInfo._prev.id)" v-if="detailInfo._prev" class="detail-prev">{{detailInfo._prev.title}}</a>
-            <a href="javascript: void(0);" v-else class="detail-prev">没有了</a>
+            <a href="javascript: void(0);" @click="_getDetail(detailInfo._prevId)" class="detail-prev">{{detailInfo._prevTitle}}</a>
         </div>
         <div class="detail-btn">
             下一篇：
-            <a href="javascript: void(0);" @click="_getDetail(detailInfo._next.id)" v-if="detailInfo._next" class="detail-prev">{{detailInfo._next.title}}</a>
-            <a href="javascript: void(0);" v-else class="detail-prev">没有了</a>
+            <a href="javascript: void(0);" @click="_getDetail(detailInfo._nextId)" class="detail-prev">{{detailInfo._nextTitle}}</a>
         </div>
     </div>
 </template>
@@ -72,12 +70,15 @@
         },
         created () {
             this._getDetail(this.$route.query.id);
+            this._getDetail('5255bf7b-0217-4735-9936-4c9d0b1c0b5b');
         },
         methods: {
             async _getDetail (id) {
+                if (!id) return;
+                this.loading = true;
                 const result = await getKnowledgeDetail({id});
                 this.loading = false;
-                this.detailInfo = JSON.parse(result.data);
+                this.detailInfo = result.data;
             }
         }
     };

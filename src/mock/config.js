@@ -19,8 +19,12 @@ export function findDetail (id, arr) {
         }
     }
     if (~index) {
-        result._prev = index - 1 < 0 ? null : arr[index - 1];
-        result._next = index + 1 > alen - 1 ? null : arr[index + 1];
+        const _prev = index - 1 < 0 ? null : arr[index - 1];
+        const _next = index + 1 > alen - 1 ? null : arr[index + 1];
+        result._prevId = _prev && _prev.id;
+        result._prevTitle = _prev ? _prev.title : '没有了';
+        result._nextId = _next && _next.id;
+        result._nextTitle = _next ? _next.title : '没有了';
     }
     return result;
 }

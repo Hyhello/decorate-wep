@@ -23,16 +23,14 @@
  });
 
  mockApi.onGet('/api/news/knowledge/detail').reply(args => {
-    const res = findDetail(args.params.id, soundknowledge);
-    console.log(res);
     return new Promise(resolve => {
-       setTimeout(() => {
-           resolve([200, {
-               code: 0,
-               data: JSON.stringify(res),
-               message: 'ok'
-           }]);
-       }, 1000);
+        setTimeout(() => {
+            resolve([200, {
+                code: 0,
+                data: findDetail(args.params.id, soundknowledge),
+                message: 'ok'
+            }]);
+        }, 1000);
     });
 });
 
