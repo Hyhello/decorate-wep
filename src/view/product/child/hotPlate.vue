@@ -106,7 +106,7 @@
                         <span class="tips__item">烫金板</span>
                     </div>
                     <figcaption class="figcaption__panel">
-                        <div class="figcaption__panel__inner fontSize20">m
+                        <div class="figcaption__panel__inner fontSize20">
                             <svg-icon type="heart"></svg-icon>
                             <span class="figcaption__inner__text">32</span>
                         </div>
