@@ -128,6 +128,7 @@ export default [
     {
         path: '/business',
         component: _import('business/business'),
+        redirect: '/business/businessList',
         meta: {
             title: '业务范围'
         },
@@ -151,6 +152,7 @@ export default [
     },
     {
         path: '/customerCase',
+        hidden: true,
         component: _import('customerCase/customerCase'),
         meta: {
             title: '客户案例'
