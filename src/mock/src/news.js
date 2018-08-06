@@ -4,7 +4,7 @@
  * 描述：news.js
  */
 
- import { mockApi } from '../config.js';
+ import { mockApi, findDetail } from '../config.js';
  import * as soundknowledge from '../data/soundknowledge.json';
  import * as evaluation from '../data/evaluation.json';
  import * as industry from '../data/industry.json';
@@ -21,6 +21,20 @@
         }, 1000);
      });
  });
+
+ mockApi.onGet('/api/news/knowledge/detail').reply(args => {
+    const res = findDetail(args.params.id, soundknowledge);
+    console.log(res);
+    return new Promise(resolve => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: JSON.stringify(res),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
 
  mockApi.onGet('/api/news/evaluation/list').reply(args => {
     return new Promise((resolve, reject) => {

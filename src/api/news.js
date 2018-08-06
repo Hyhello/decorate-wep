@@ -9,6 +9,9 @@
  // 获取吸音知识列表
  const getKnowledgeListApi = '/api/news/knowledge/list';
 
+ // 获取吸音知识详情
+ const getKnowledgeDetailApi = '/api/news/knowledge/detail';
+
  // 获取客户评价列表
  const getEvaluationListApi = '/api/news/evaluation/list';
 
@@ -20,6 +23,9 @@
 
  // 获取吸音知识列表
  export const getKnowledgeList = () => axios.get(getKnowledgeListApi);
+
+ // 获取吸音知识详情
+ export const getKnowledgeDetail = (opt) => axios.get(getKnowledgeDetailApi, { params: opt });
 
  // 获取客户评价列表
  export const getEvaluationList = () => axios.get(getEvaluationListApi);

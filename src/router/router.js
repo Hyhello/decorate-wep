@@ -118,7 +118,7 @@ export default [
             {
                 path: 'detail',
                 hidden: true,
-                component: _import('detail'),
+                component: _import('product/detail'),
                 meta: {
                     title: '详情'
                 }
@@ -135,7 +135,7 @@ export default [
             {
                 path: 'detail',
                 hidden: true,
-                component: _import('detail'),
+                component: _import('customerCase/detail'),
                 meta: {
                     title: '详情'
                 }
@@ -181,7 +181,7 @@ export default [
             {
                 path: 'detail',
                 hidden: true,
-                component: _import('detail'),
+                component: _import('news/detail'),
                 meta: {
                     title: '详情'
                 }
