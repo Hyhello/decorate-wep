@@ -61,7 +61,7 @@
     </div>
 </template>
 <script>
-    import { getSoundBoardDetail } from '@/api/product';
+    import { getSoundBoardDetail, getSoundAbsorptionDetail } from '@/api/product';
 
     export default {
         data () {
@@ -77,12 +77,13 @@
                 let fn = () => {};
                 switch (from.toLowerCase()) {
                     case 'soundboard':
-                        fn = getSoundBoardDetail;
                         this.title = '吸音板';
+                        fn = getSoundBoardDetail;
                         break;
-                    // case 'industry':
-                    //     fn = getIndustryDetail;
-                    //     break;
+                    case 'soundabsorption':
+                        this.title = '吸音棉';
+                        fn = getSoundAbsorptionDetail;
+                        break;
                     // case 'evaluation':
                     //     fn = getEvaluationDetail;
                     //     break;

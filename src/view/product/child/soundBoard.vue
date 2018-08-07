@@ -1,7 +1,7 @@
 /**
  * 作者：yeshengqiang
  * 时间：2018-06-07
- * 描述：吸音音板
+ * 描述：吸音板
  */
 <style lang="scss" scoped>
     @import 'src/scss/vars';
