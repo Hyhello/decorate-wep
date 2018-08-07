@@ -10,6 +10,9 @@ import * as soundAbsorption from '../data/soundAbsorption.json';
 import * as soundBlanket from '../data/soundBlanket.json';
 import * as softPackage from '../data/softPackage.json';
 import * as hardPackage from '../data/hardPackage.json';
+import * as flockBoard from '../data/flockBoard.json';
+import * as hotPlate from '../data/hotPlate.json';
+import * as door from '../data/door.json';
 
 // 分页
 const findPage = (opt, arr) => {
@@ -138,6 +141,78 @@ mockApi.onGet('/api/product/hardPackage/detail').reply(args => {
            resolve([200, {
                code: 0,
                data: findDetail(args.params.id, hardPackage),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/flockBoard/list').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findPage(args.params, flockBoard),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/flockBoard/detail').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findDetail(args.params.id, flockBoard),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/hotPlate/list').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findPage(args.params, hotPlate),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/hotPlate/detail').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findDetail(args.params.id, hotPlate),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/door/list').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findPage(args.params, door),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/door/detail').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findDetail(args.params.id, door),
                message: 'ok'
            }]);
        }, 1000);

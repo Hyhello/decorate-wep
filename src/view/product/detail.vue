@@ -61,7 +61,7 @@
     </div>
 </template>
 <script>
-    import { getSoundBoardDetail, getSoundAbsorptionDetail, getSoundBlanketDetail, getSoftPackageDetail, getHardPackageDetail } from '@/api/product';
+    import { getSoundBoardDetail, getSoundAbsorptionDetail, getSoundBlanketDetail, getSoftPackageDetail, getHardPackageDetail, getFlockBoardDetail, getHotPlateDetail, getDoorDetail } from '@/api/product';
 
     export default {
         data () {
@@ -89,6 +89,15 @@
                         break;
                     case 'hardpackage':
                         fn = getHardPackageDetail;
+                        break;
+                    case 'flockboard':
+                        fn = getFlockBoardDetail;
+                        break;
+                    case 'hotplate':
+                        fn = getHotPlateDetail;
+                        break;
+                    case 'door':
+                        fn = getDoorDetail;
                         break;
                 }
                 return fn;

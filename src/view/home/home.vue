@@ -217,8 +217,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="javascript: void(0);" @click="goSoundBoard('/product/hotPlate')">
-                            <img src="/static/images/tjb1.jpg" alt="jq"/>
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/flockBoard')">
+                            <img src="/static/images/聚酯纤维板/聚酯纤维板.jpg" alt="jq"/>
                             <span class="tabtext">
                                 聚酯纤维板
                             </span>
@@ -226,7 +226,7 @@
                     </li>
                     <li>
                         <a href="javascript: void(0);" @click="goSoundBoard('/product/hotPlate')">
-                            <img src="/static/images/tjb1.jpg" alt="jq"/>
+                            <img src="/static/images/矿棉板/timg矿棉板.jpg" alt="jq"/>
                             <span class="tabtext">
                                 矿棉板
                             </span>

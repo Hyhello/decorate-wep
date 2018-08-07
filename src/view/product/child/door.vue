@@ -140,7 +140,7 @@
 </template>
 <script>
     import list from '@/mixins/list';
-    import { getFlockBoardList } from '@/api/product';
+    import { getDoorList } from '@/api/product';
 
     export default {
         mixins: [ list ],
@@ -156,13 +156,13 @@
         methods: {
             async _getList () {
                 this.loading = true;
-                const result = await getFlockBoardList(this.searchData);
+                const result = await getDoorList(this.searchData);
                 this.loading = false;
                 this.list = result.data.dataList;
                 this.total = result.data.total;
             },
             detail (id) {
-                this.$router.push({path: '/product/detail', query: {id, from: 'flockBoard', name: this.$route.meta.title}});
+                this.$router.push({path: '/product/detail', query: {id, from: 'door', name: this.$route.meta.title}});
             }
         }
     };

@@ -102,6 +102,13 @@ export default [
                 }
             },
             {
+                path: 'door',
+                component: _import('product/child/door'),
+                meta: {
+                    title: '隔音门'
+                }
+            },
+            {
                 path: 'flockBoard',
                 component: _import('product/child/flockBoard'),
                 meta: {
