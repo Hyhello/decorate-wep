@@ -97,7 +97,7 @@
     }
 </style>
 <template>
-    <div class="board-panel">
+    <div class="board-panel" v-loading="loading" :loading-text="loadingText">
         <ul class="carousel-panel">
             <li class="carousel-item" v-for="(item, index) in 9" :key="index">
                 <figure class="figure__panel">
@@ -123,25 +123,37 @@
             </li>
         </ul>
         <!-- 分页 -->
-        <!-- <el-pagination
-            background
-            layout="prev, pager, next"
-            :total="1000">
-        </el-pagination> -->
-        <!-- <div class="pagination-panel">
-            <span class="pagination-item">
-                <a href="javascript: void(0);" class="pagination-prev"><svg-icon type="back"></svg-icon></a>
-                <a href="javascript: void(0);">上一页</a>
-            </span>
-            <a class="pagination-item">
-                <a href="javascript: void(0);">下一页</a>
-                <a href="javascript: void(0);" class="pagination-next"><svg-icon type="forward"></svg-icon></a>
-            </a>
-        </div> -->
+        <div class="page-panel" v-show="pageShow">
+            <el-pagination
+                background
+                :page-size="searchData.pageSize"
+                :current-page="searchData.pageNo"
+                :layout="$store.state.layout"
+                :total="list.length">
+            </el-pagination>
+        </div>
     </div>
 </template>
 <script>
-    export default {
+    import list from '@/mixins/list';
+    import { getSoundBoardList } from '@/api/product';
 
+    export default {
+        mixins: [ list ],
+        data () {
+            return {
+                searchData: {
+                    pageSize: 6,
+                    pageNo: 1
+                }
+            };
+        },
+        methods: {
+            async _getList () {
+                const result = await getSoundBoardList();
+                this.loading = false;
+                this.list = result.data;
+            }
+        }
     };
 </script>

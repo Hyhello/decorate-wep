@@ -68,6 +68,7 @@
         </ul>
         <div class="page-panel" v-show="pageShow">
             <el-pagination
+                background
                 :page-size="searchData.pageSize"
                 :current-page="searchData.pageNo"
                 :layout="$store.state.layout"
