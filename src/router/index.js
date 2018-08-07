@@ -5,7 +5,7 @@ import routes from './router.js';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-    // mode: 'history',
+    mode: 'history',
     scrollBehavior: () => ({y: 0}),
     routes,
     strict: process.env.NODE_ENV !== 'production'
