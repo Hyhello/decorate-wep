@@ -170,7 +170,7 @@
                 <ul class="tabbox clearfix">
                     <li style="margin-left:0;">
                         <a href="javascript: void(0);" @click="goSoundBoard('/product/soundBoard')">
-                            <img src="/static/images/xyb1.jpg" alt="javascript"/>
+                            <img src="/static/images/吸音板/聚脂钎维吸音板.jpg" alt="javascript"/>
                             <span class="tabtext">
                                 吸音板
                             </span>
@@ -178,7 +178,7 @@
                     </li>
                     <li>
                         <a href="javascript: void(0);" @click="goSoundBoard('/product/soundAbsorption')">
-                            <img src="/static/images/xym1.jpg" alt="ps"/>
+                            <img src="/static/images/吸音棉/吸音棉效果图.jpg" alt="ps"/>
                             <span class="tabtext">
                                 吸音棉
                             </span>
@@ -186,7 +186,7 @@
                     </li>
                     <li>
                         <a href="javascript: void(0);" @click="goSoundBoard('/product/soundBlanket')">
-                            <img src="/static/images/gyz1.jpg" alt="java"/>
+                            <img src="/static/images/隔音毡/9mm厚阻尼隔音毡.jpg" alt="java"/>
                             <span class="tabtext">
                                 隔音毡
                             </span>
@@ -194,7 +194,7 @@
                     </li>
                     <li>
                         <a href="javascript: void(0);" @click="goSoundBoard('/product/softPackage')">
-                            <img src="/static/images/rb1.jpg" alt="python"/>
+                            <img src="/static/images/软包/背景墙软包.jpg" alt="python"/>
                             <span class="tabtext">
                                 软包
                             </span>
@@ -202,7 +202,7 @@
                     </li>
                     <li style="margin-left:0;">
                         <a href="javascript: void(0);" @click="goSoundBoard('/product/hardPackage')">
-                            <img src="/static/images/yb1.jpg" alt="python"/>
+                            <img src="/static/images/硬包/办公室会议室硬包.jpg" alt="python"/>
                             <span class="tabtext">
                                 硬包
                             </span>
@@ -210,7 +210,7 @@
                     </li>
                     <li>
                         <a href="javascript: void(0);" @click="goSoundBoard('/product/flockBoard')">
-                            <img src="/static/images/mryhb1.jpg" alt="css3"/>
+                            <img src="/static/images/隔音门/钢制木制隔音门.jpg" alt="css3"/>
                             <span class="tabtext">
                                 隔音门
                             </span>
