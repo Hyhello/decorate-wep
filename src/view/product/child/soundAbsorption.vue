@@ -162,7 +162,7 @@
                 this.total = result.data.total;
             },
             detail (id) {
-                this.$router.push({path: '/product/detail', query: {id, from: 'soundAbsorption'}});
+                this.$router.push({path: '/product/detail', query: {id, from: 'soundAbsorption', name: this.$route.meta.title}});
             }
         }
     };

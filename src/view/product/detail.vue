@@ -48,7 +48,7 @@
             </div>
         </h3>
         <div class="detail-content">
-            <img :src="`/static/images/${title}/${detailInfo.src}`" :alt="title" />
+            <img :src="`/static/images/${$route.query.name}/${detailInfo.src}`" :alt="$route.query.name" />
         </div>
         <div class="detail-btn">
             上一篇：
@@ -66,7 +66,6 @@
     export default {
         data () {
             return {
-                title: '',
                 loading: true,
                 detailInfo: {}
             };
@@ -77,11 +76,9 @@
                 let fn = () => {};
                 switch (from.toLowerCase()) {
                     case 'soundboard':
-                        this.title = '吸音板';
                         fn = getSoundBoardDetail;
                         break;
                     case 'soundabsorption':
-                        this.title = '吸音棉';
                         fn = getSoundAbsorptionDetail;
                         break;
                     // case 'evaluation':
