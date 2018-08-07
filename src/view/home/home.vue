@@ -301,11 +301,11 @@
                     100000
                 </p>
                 <div class="wechat-panel">
-                    <img src="../../assets/images/wechat.png" alt="wechat" />
+                    <img width="100" src="../../assets/images/wechat.png" alt="wechat" />
                     <p class="wechat-tips">- 官方微信 -</p>
                 </div>
             </div>
-            <div class="copyright">Copyright © 2018 <span class="copyright-font">Prospect</span></div>
+            <div class="copyright">Copyright 2016  版权所有：北京叶斌腾达装饰设计有限公司</div>
         </footer>
     </div>
 </template>

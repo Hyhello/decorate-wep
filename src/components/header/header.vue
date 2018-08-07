@@ -92,7 +92,7 @@
                 </ul>
             </div>
             <div class="header_search">
-                <input class="search_input" type="text" placeholder="请您输入想搜索的关键字" />
+                <input class="search_input" v-model="searchModel" @keydown.enter="search" type="text" placeholder="请您输入想搜索的关键字" />
             </div>
         </div>
     </header>
@@ -100,6 +100,11 @@
 <script>
     export default {
         name: 'hyHeader',
+        data () {
+            return {
+                searchModel: ''
+            };
+        },
         computed: {
             routerList () {
                 let routes = this.$router.options.routes;
@@ -118,6 +123,15 @@
                 //     }
                 // ]);
                 return routes;
+            }
+        },
+        methods: {
+            search () {
+                this.searchModel = '';
+                this.$message({
+                    message: '敬请期待！',
+                    type: 'success'
+                });
             }
         }
     };

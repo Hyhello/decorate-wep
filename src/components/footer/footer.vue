@@ -11,7 +11,7 @@
         width: 100%;
         min-width: 1200px;
         _width: 1200px;
-        background-color: #000;
+        background-color: #1f2830;
         .footer {
             width: 1200px;
             margin: 0 auto;
@@ -49,14 +49,13 @@
     <div class="footbox">
         <div class="footer">
             <ul class="footertext clearfix">
-                <li><a href="javascript: void(0);">产品中心</a></li>
-                <li><a href="javascript: void(0);">联系我们</a></li>
-                <li><a href="javascript: void(0);">版权声明</a></li>
-                <li><a href="javascript: void(0);">关于叶斌腾达</a></li>
+                <li><router-link :to="{path: '/product'}">产品中心</router-link></li>
+                <li><router-link :to="{path: '/business'}">业务范围</router-link></li>
+                <li><router-link :to="{path: '/technicalSupport'}">技术支持</router-link></li>
+                <li><router-link :to="{path: '/about'}">关于叶斌腾达</router-link></li>
             </ul>
             <div class="texticp">
-                <p>Copyright&nbsp;2015 www.bitworks.cn&nbsp;版权所有：武汉尚伟教育科技有限公司</p>
-                <p>所有教程、视频除特别声明外，均为原创作品，谢绝任何形式的转载、引用和其他商业用途&nbsp;鄂ICP备&nbsp;13003952号-3</p>
+                <p>Copyright&nbsp;2016 &nbsp;版权所有：{{$store.state.company}}</p>
             </div>
         </div>
     </div>
