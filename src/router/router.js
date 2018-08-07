@@ -169,6 +169,14 @@ export default [
         ]
     },
     {
+        path: '/superiority',
+        component: _import('superiority/superiority'),
+        meta: {
+            title: '企业优势'
+        },
+        children: []
+    },
+    {
         path: '/news',
         component: _import('news/news'),
         redirect: '/news/enterprise',

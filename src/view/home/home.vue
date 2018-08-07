@@ -169,7 +169,7 @@
                 </h3>
                 <ul class="tabbox clearfix">
                     <li style="margin-left:0;">
-                        <a href="###">
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/soundBoard')">
                             <img src="/static/images/xyb1.jpg" alt="javascript"/>
                             <span class="tabtext">
                                 吸音板
@@ -177,7 +177,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="###">
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/soundAbsorption')">
                             <img src="/static/images/xym1.jpg" alt="ps"/>
                             <span class="tabtext">
                                 吸音棉
@@ -185,7 +185,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="###">
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/soundBlanket')">
                             <img src="/static/images/gyz1.jpg" alt="java"/>
                             <span class="tabtext">
                                 隔音毡
@@ -193,7 +193,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="###">
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/softPackage')">
                             <img src="/static/images/rb1.jpg" alt="python"/>
                             <span class="tabtext">
                                 软包
@@ -201,7 +201,7 @@
                         </a>
                     </li>
                     <li style="margin-left:0;">
-                        <a href="###">
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/hardPackage')">
                             <img src="/static/images/yb1.jpg" alt="python"/>
                             <span class="tabtext">
                                 硬包
@@ -209,26 +209,26 @@
                         </a>
                     </li>
                     <li>
-                        <a href="###">
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/flockBoard')">
                             <img src="/static/images/mryhb1.jpg" alt="css3"/>
                             <span class="tabtext">
-                                植绒印花板
+                                隔音门
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href="###">
-                            <img src="/static/images/xyb2.jpg" alt="bootstrap"/>
-                            <span class="tabtext">
-                                吸引体
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/hotPlate')">
                             <img src="/static/images/tjb1.jpg" alt="jq"/>
                             <span class="tabtext">
-                                烫金板
+                                聚酯纤维板
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" @click="goSoundBoard('/product/hotPlate')">
+                            <img src="/static/images/tjb1.jpg" alt="jq"/>
+                            <span class="tabtext">
+                                矿棉板
                             </span>
                         </a>
                     </li>
@@ -320,6 +320,9 @@
         };
     },
     methods: {
+        goSoundBoard (path) {
+            this.$router.push(path);
+        },
         sendDemand () {
             this.addInfo = {};
             this.$message({
