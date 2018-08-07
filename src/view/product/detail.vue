@@ -61,7 +61,7 @@
     </div>
 </template>
 <script>
-    import { getSoundBoardDetail, getSoundAbsorptionDetail } from '@/api/product';
+    import { getSoundBoardDetail, getSoundAbsorptionDetail, getSoundBlanketDetail } from '@/api/product';
 
     export default {
         data () {
@@ -81,9 +81,9 @@
                     case 'soundabsorption':
                         fn = getSoundAbsorptionDetail;
                         break;
-                    // case 'evaluation':
-                    //     fn = getEvaluationDetail;
-                    //     break;
+                    case 'soundblanket':
+                        fn = getSoundBlanketDetail;
+                        break;
                     // case 'enterprise':
                     //     fn = getEnterpriseDetail;
                     //     break;
