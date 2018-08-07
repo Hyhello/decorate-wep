@@ -105,14 +105,14 @@ export default [
                 path: 'flockBoard',
                 component: _import('product/child/flockBoard'),
                 meta: {
-                    title: '植绒印花板'
+                    title: '聚酯纤维板'
                 }
             },
             {
                 path: 'hotPlate',
                 component: _import('product/child/hotPlate'),
                 meta: {
-                    title: '烫金体'
+                    title: '矿棉板'
                 }
             },
             {

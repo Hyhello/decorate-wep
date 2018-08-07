@@ -9,6 +9,7 @@ import * as soundBoard from '../data/soundBoard.json';
 import * as soundAbsorption from '../data/soundAbsorption.json';
 import * as soundBlanket from '../data/soundBlanket.json';
 import * as softPackage from '../data/softPackage.json';
+import * as hardPackage from '../data/hardPackage.json';
 
 // 分页
 const findPage = (opt, arr) => {
@@ -113,6 +114,30 @@ mockApi.onGet('/api/product/softPackage/detail').reply(args => {
            resolve([200, {
                code: 0,
                data: findDetail(args.params.id, softPackage),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/hardPackage/list').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findPage(args.params, hardPackage),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/hardPackage/detail').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findDetail(args.params.id, hardPackage),
                message: 'ok'
            }]);
        }, 1000);

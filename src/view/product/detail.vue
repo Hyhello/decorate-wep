@@ -61,7 +61,7 @@
     </div>
 </template>
 <script>
-    import { getSoundBoardDetail, getSoundAbsorptionDetail, getSoundBlanketDetail, getSoftPackageDetail } from '@/api/product';
+    import { getSoundBoardDetail, getSoundAbsorptionDetail, getSoundBlanketDetail, getSoftPackageDetail, getHardPackageDetail } from '@/api/product';
 
     export default {
         data () {
@@ -86,6 +86,9 @@
                         break;
                     case 'softpackage':
                         fn = getSoftPackageDetail;
+                        break;
+                    case 'hardpackage':
+                        fn = getHardPackageDetail;
                         break;
                 }
                 return fn;

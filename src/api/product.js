@@ -30,6 +30,12 @@ const getSoftPackageListApi = '/api/product/softPackage/list';
 // 获取软包详情
 const getSoftPackageDetailApi = '/api/product/softPackage/detail';
 
+// 获取硬包列表
+const getHardPackageListApi = '/api/product/hardPackage/list';
+
+// 获取硬包详情
+const getHardPackageDetailApi = '/api/product/hardPackage/detail';
+
  // 获取吸音板列表
  export const getSoundBoardList = (opt) => axios.get(getSoundBoardListApi, {params: opt});
 
@@ -53,3 +59,9 @@ const getSoftPackageDetailApi = '/api/product/softPackage/detail';
 
   // 获取软包详情
   export const getSoftPackageDetail = (opt) => axios.get(getSoftPackageDetailApi, {params: opt});
+
+  // 获取硬包列表
+  export const getHardPackageList = (opt) => axios.get(getHardPackageListApi, {params: opt});
+
+  // 获取硬包详情
+  export const getHardPackageDetail = (opt) => axios.get(getHardPackageDetailApi, {params: opt});
