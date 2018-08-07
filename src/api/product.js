@@ -24,6 +24,12 @@ const getSoundBlanketListApi = '/api/product/soundBlanket/list';
 // 获取隔音毡详情
 const getSoundBlanketDetailApi = '/api/product/soundBlanket/detail';
 
+// 获取软包列表
+const getSoftPackageListApi = '/api/product/softPackage/list';
+
+// 获取软包详情
+const getSoftPackageDetailApi = '/api/product/softPackage/detail';
+
  // 获取吸音板列表
  export const getSoundBoardList = (opt) => axios.get(getSoundBoardListApi, {params: opt});
 
@@ -41,3 +47,9 @@ const getSoundBlanketDetailApi = '/api/product/soundBlanket/detail';
 
  // 获取隔音毡详情
  export const getSoundBlanketDetail = (opt) => axios.get(getSoundBlanketDetailApi, {params: opt});
+
+  // 获取软包列表
+  export const getSoftPackageList = (opt) => axios.get(getSoftPackageListApi, {params: opt});
+
+  // 获取软包详情
+  export const getSoftPackageDetail = (opt) => axios.get(getSoftPackageDetailApi, {params: opt});
