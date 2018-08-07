@@ -40,30 +40,70 @@
     }
 </style>
 <template>
-    <div class="container detail-panel">
+    <div class="container detail-panel" v-loading="loading" :loading-text="$store.state.loadingText">
         <h3 class="detail-title">
-            房间最不宜存放的6种植物
+            {{detailInfo.title}}
             <div class="detail-title-tips">
-                来源：<font color="#CC0000">北京叶斌腾达装饰设计有限公司</font> 发布时间：<font color="#CC0000">2016-11-19</font> 已被浏览 <font color="#CC0000">1123</font> 次
+                来源：<font color="#CC0000">{{this.$store.state.company}}</font> 发布时间：<font color="#CC0000">{{detailInfo.releaseTime}}</font> 已被浏览 <font color="#CC0000">{{detailInfo.times}}</font> 次
             </div>
         </h3>
         <div class="detail-content">
-            北京叶斌腾达装饰设计有限公司
+            <img :src="`/static/images/${title}/${detailInfo.src}`" :alt="title" />
         </div>
         <div class="detail-btn">
             上一篇：
-            <a href="javascript: void(0);" class="detail-prev">排练室装修</a>
+            <a href="javascript: void(0);" @click="_getDetail(detailInfo._prevId)" class="detail-prev">{{detailInfo._prevTitle}}</a>
         </div>
         <div class="detail-btn">
             下一篇：
-            <a href="javascript: void(0);" class="detail-prev">视听室装修</a>
+            <a href="javascript: void(0);" @click="_getDetail(detailInfo._nextId)" class="detail-prev">{{detailInfo._nextTitle}}</a>
         </div>
     </div>
 </template>
 <script>
+    import { getSoundBoardDetail } from '@/api/product';
+
     export default {
-        mounted () {
-            console.log(this.$route);
+        data () {
+            return {
+                title: '',
+                loading: true,
+                detailInfo: {}
+            };
+        },
+        computed: {
+            getFnDetail () {
+                const from = this.$route.query.from;
+                let fn = () => {};
+                switch (from.toLowerCase()) {
+                    case 'soundboard':
+                        fn = getSoundBoardDetail;
+                        this.title = '吸音板';
+                        break;
+                    // case 'industry':
+                    //     fn = getIndustryDetail;
+                    //     break;
+                    // case 'evaluation':
+                    //     fn = getEvaluationDetail;
+                    //     break;
+                    // case 'enterprise':
+                    //     fn = getEnterpriseDetail;
+                    //     break;
+                }
+                return fn;
+            }
+        },
+        created () {
+            this._getDetail(this.$route.query.id);
+        },
+        methods: {
+            async _getDetail (id) {
+                if (!id) return;
+                this.loading = true;
+                const result = await this.getFnDetail({id});
+                this.loading = false;
+                this.detailInfo = result.data;
+            }
         }
     };
 </script>

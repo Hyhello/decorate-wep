@@ -22,13 +22,25 @@ const findPage = (opt, arr) => {
     result.dataList = arr.slice(start, end);
     return result;
 };
-console.log(findDetail);
+
 mockApi.onGet('/api/product/soundBoard/list').reply(args => {
     return new Promise((resolve, reject) => {
        setTimeout(() => {
            resolve([200, {
                code: 0,
                data: findPage(args.params, soundBoard),
+               message: 'ok'
+           }]);
+       }, 1000);
+    });
+});
+
+mockApi.onGet('/api/product/soundBoard/detail').reply(args => {
+    return new Promise((resolve, reject) => {
+       setTimeout(() => {
+           resolve([200, {
+               code: 0,
+               data: findDetail(args.params.id, soundBoard),
                message: 'ok'
            }]);
        }, 1000);
