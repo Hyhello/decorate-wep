@@ -10,4 +10,4 @@ import axios from '@/libs/https';
 const getSoundBoardListApi = '/api/product/soundBoard/list';
 
  // 获取吸音板列表
- export const getSoundBoardList = () => axios.get(getSoundBoardListApi);
+ export const getSoundBoardList = (opt) => axios.get(getSoundBoardListApi, {params: opt});

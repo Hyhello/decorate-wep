@@ -7,11 +7,14 @@
     @import 'src/scss/vars';
     @import 'src/scss/mixins';
     $width: 100% / 3;
-
+    .board-panel {
+        min-height: 500px;
+    }
     .carousel-panel {
         @include clearfix;
         box-sizing: border-box;
         .carousel-item {
+            cursor: pointer;
             float: left;
             padding: 10px;
             width: $width;
@@ -99,24 +102,24 @@
 <template>
     <div class="board-panel" v-loading="loading" :loading-text="loadingText">
         <ul class="carousel-panel">
-            <li class="carousel-item" v-for="(item, index) in 9" :key="index">
+            <li class="carousel-item" @click="detail(item.id)" v-for="(item, index) in list" :key="index">
                 <figure class="figure__panel">
                     <div class="figure_img">
-                        <img :src="`/static/images/xyb${index+1}.jpg`" />
-                        <span class="tips__item">吸音板</span>
+                        <img :src="`/static/images/${$route.meta.title}/${item.src}`" />
+                        <span class="tips__item">{{$route.meta.title}}</span>
                     </div>
                     <figcaption class="figcaption__panel">
                         <div class="figcaption__panel__inner fontSize20">
                             <svg-icon type="heart"></svg-icon>
-                            <span class="figcaption__inner__text">32</span>
+                            <span class="figcaption__inner__text">{{item.heart}}</span>
                         </div>
                         <div class="figcaption__panel__inner borderBoth fontSize26">
                             <svg-icon type="eyes"></svg-icon>
-                            <span class="figcaption__inner__text">610</span>
+                            <span class="figcaption__inner__text">{{item.times}}</span>
                         </div>
                         <div class="figcaption__panel__inner fontSize20">
                             <svg-icon type="message"></svg-icon>
-                            <span class="figcaption__inner__text">7</span>
+                            <span class="figcaption__inner__text">{{item.message}}</span>
                         </div>
                     </figcaption>
                 </figure>
@@ -126,10 +129,11 @@
         <div class="page-panel" v-show="pageShow">
             <el-pagination
                 background
+                @current-change="currentChange"
                 :page-size="searchData.pageSize"
                 :current-page="searchData.pageNo"
                 :layout="$store.state.layout"
-                :total="list.length">
+                :total="total">
             </el-pagination>
         </div>
     </div>
@@ -142,6 +146,7 @@
         mixins: [ list ],
         data () {
             return {
+                total: 0,
                 searchData: {
                     pageSize: 6,
                     pageNo: 1
@@ -150,9 +155,14 @@
         },
         methods: {
             async _getList () {
-                const result = await getSoundBoardList();
+                this.loading = true;
+                const result = await getSoundBoardList(this.searchData);
                 this.loading = false;
-                this.list = result.data;
+                this.list = result.data.dataList;
+                this.total = result.data.total;
+            },
+            detail (id) {
+                this.$router.push({path: '/product/detail', query: {id}});
             }
         }
     };
