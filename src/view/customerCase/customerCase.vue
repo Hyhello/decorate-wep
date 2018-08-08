@@ -52,7 +52,7 @@
         <ul>
             <li v-for="(item, index) in list" :key="index" v-animate-line class="right_content clearfix">
                 <div class="right_img fl">
-                    <img src="../../assets/images/course.png" />
+                    <!-- <img src="../../assets/images/course.png" /> -->
                 </div>
                 <div class="right_text fl">
                     <h3 class="query_title">北京住宅隔音案例-各住宅小区清单</h3>
