@@ -1,0 +1,2 @@
+webpackJsonp([34],{giAa:function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n={render:function(){this.$createElement;this._self._c;return this._m(0)},staticRenderFns:[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"business-panel"},[t("p",{staticClass:"text-format"},[this._v("\n        吸音板、聚酯纤维吸音板、 聚酯纤维植绒板、聚酯纤维烫金板、装饰软包硬包、装饰吸音棉、装饰吸音体！\n    ")])])}]},i=s("Aizv")({},n,!1,null,null,null);t.default=i.exports}});
+//# sourceMappingURL=34.d78817f005797bcdb96f.js.map
