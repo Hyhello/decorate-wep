@@ -66,6 +66,7 @@
         computed: {
             routerList () {
                 const matched = this.$route.matched[0];
+                if (!matched) return [{meta: {}}];
                 let routes = this.$router.options.routes.filter(item => item.path === matched.path);
                 if ('children' in routes[0]) {
                     routes[0].children = routes[0].children.filter(item => !item.hidden);

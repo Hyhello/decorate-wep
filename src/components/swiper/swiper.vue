@@ -10,6 +10,10 @@
         min-width: 1200px;
         _width: 1200px;
         overflow: hidden;
+        .hy-carousel-item {
+            width: 100%;
+            display: block;
+        }
         .banner_small {
             width: 100%;
             background-color: rgba(0, 0, 0, 0.4);
@@ -46,9 +50,9 @@
 <template>
     <div class="banner-panel">
         <div class="bannerbox">
-            <el-carousel ref="carousel" :interval="5000" indicator-position="none" height="375px" @change="handleChange">
+            <el-carousel ref="carousel" :interval="5000" indicator-position="none" height="420px" @change="handleChange">
                 <el-carousel-item v-for="(item, index) in list" :key="index">
-                    <img :src="item.src" :alt="index"/>
+                    <img class="hy-carousel-item" :src="item.src" :alt="index"/>
                 </el-carousel-item>
             </el-carousel>
             <div class="banner_small">
